@@ -19,7 +19,7 @@ using LiveChartsCore.VisualElements;
 using LiveChartsCore.SkiaSharpView.Drawing;
 using LiveChartsCore.SkiaSharpView.VisualElements;
 using LiveChartsCore.Defaults;
-using AvaLiveCharts.ViewModels;
+
 
 namespace AvaLiveCharts.ViewModels;
 
@@ -27,16 +27,16 @@ public partial class MainViewModel : ObservableObject
 
 
 {
+    [ObservableProperty]
+    private string text_Slider_Value2 = "YYY";
 
     [ObservableProperty]
     private int sliderValue2 = 20;
 
-    [ObservableProperty]
-    private string text_Slider_Value2 = "YYY";
+
 
     partial void OnSliderValue2Changed(int oldValue, int newValue)
     {
         Text_Slider_Value2 = newValue.ToString();
     }
-
 }

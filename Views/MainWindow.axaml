@@ -32,6 +32,29 @@
  <ScrollViewer>
 <StackPanel>
 
+  <TextBox Text="{Binding Text_Slider_Value}" />
+
+    <Slider Value="{Binding SliderValue}" 
+        Orientation="Horizontal"
+        Height="40"
+        TickFrequency="20" 
+        TickPlacement="BottomRight"
+        Minimum="0" 
+        Maximum="200" />
+
+
+    <TextBox Text="{Binding Text_Slider_Value2}" />
+
+    <Slider Value="{Binding SliderValue2}" 
+        Orientation="Horizontal"
+        Height="40"
+        TickFrequency="20" 
+        TickPlacement="BottomRight"
+        Minimum="0" 
+        Maximum="200" />
+
+
+
     <TextBlock Text="Username"/>
     <TextBox Text="{Binding UserName}"/>
 
@@ -57,28 +80,7 @@
     </lvc:CartesianChart>
 
 
-    <TextBox Text="{Binding Text_Slider_Value}" />
-
-    <Slider Value="{Binding SliderValue}" 
-        Orientation="Horizontal"
-        Height="40"
-        TickFrequency="20" 
-        TickPlacement="BottomRight"
-        Minimum="0" 
-        Maximum="200" />
-
-
-    <TextBox Text="{Binding Text_Slider_Value2}" />
-
-    <Slider Value="{Binding SliderValue2}" 
-        Orientation="Horizontal"
-        Height="40"
-        TickFrequency="20" 
-        TickPlacement="BottomRight"
-        Minimum="0" 
-        Maximum="200" />
-
-
+  
 
 </StackPanel>
 
