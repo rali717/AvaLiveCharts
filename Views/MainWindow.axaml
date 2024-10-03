@@ -79,7 +79,6 @@
         Series="{Binding Series}" ZoomMode="X"  Height="700" Width="800" >
     </lvc:CartesianChart>
 
-
   
 
 </StackPanel>
