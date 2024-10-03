@@ -47,11 +47,6 @@ public partial class MainViewModel : ObservableObject
     private string text_Slider_Value = "XXX";
 
 
-    [ObservableProperty]
-    private int sliderValue2 = 20;
-
-    [ObservableProperty]
-    private string text_Slider_Value2 = "YYY";
 
 
 
@@ -88,11 +83,7 @@ public partial class MainViewModel : ObservableObject
         Text_Slider_Value = newValue.ToString();
     }
 
-    partial void OnSliderValue2Changed(int oldValue, int newValue)
-    {
-        
-        Text_Slider_Value2 = newValue.ToString();
-    }
+
 
 
     [RelayCommand]

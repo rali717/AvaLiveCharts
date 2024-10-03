@@ -28,5 +28,15 @@ public partial class MainViewModel : ObservableObject
 
 {
 
+    [ObservableProperty]
+    private int sliderValue2 = 20;
+
+    [ObservableProperty]
+    private string text_Slider_Value2 = "YYY";
+
+    partial void OnSliderValue2Changed(int oldValue, int newValue)
+    {
+        Text_Slider_Value2 = newValue.ToString();
+    }
 
 }
