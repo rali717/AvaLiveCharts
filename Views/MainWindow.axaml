@@ -3,109 +3,86 @@
         xmlns:vm="using:AvaLiveCharts.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-
         xmlns:local="using:AvaloniaSample"
         xmlns:lvc="using:LiveChartsCore.SkiaSharpView.Avalonia"
-
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-        
+        mc:Ignorable="d"
+        d:DesignWidth="800"
+        d:DesignHeight="450"
         x:Class="AvaLiveCharts.Views.MainWindow"
         x:DataType="vm:MainViewModel"
         Icon="/Assets/avalonia-logo.ico"
         Title="AvaLiveCharts"
-
-        Height="600" Width="900" 
-        MinHeight="400" MaxHeight="800"
-        MinWidth="500" MaxWidth="1000"        
-        >
-
-
-
+        Height="600"
+        Width="900"
+        MinHeight="400"
+        MaxHeight="800"
+        MinWidth="500"
+        MaxWidth="1000">
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-        <vm:MainViewModel/>
+        <vm:MainViewModel />
     </Design.DataContext>
+    <!-- <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/> -->
+    <ScrollViewer>
+        <StackPanel>
+            <Grid ColumnDefinitions="*"
+                  RowDefinitions="Auto"
+                  Margin="50"
+                  >
+                <Border Grid.Row="0"
+                        Background="Red" />
+                <TextBlock Text="{Binding Greeting}"
+                           FontFamily="Arial"
+                           FontSize="24"
+                           Grid.Row="0"
+                           Grid.Column="0"
+                           Background="Orange"
+                           Padding="20"
+                           Margin="20"
+                           HorizontalAlignment="Center" />
+            </Grid>
 
-    <!--<TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>-->
-
- <ScrollViewer>
-<StackPanel>
-
-
-        <Button  Command="{Binding DoRandomChangeCommand}">Change Value</Button>
-
-        <lvc:PieChart
-            Height="300" Width="300"
-            Series="{Binding Series_AngularGauge}"
-            VisualElements="{Binding VisualElements}"
-            InitialRotation="-225"
-            MaxAngle="270"
-            MinValue="0"
-            MaxValue="100">
-        </lvc:PieChart>
-
-
-
-        <lvc:PieChart
-           
-            Height="500" Width="500"
-            Series="{Binding PieSeries}">
-        </lvc:PieChart>
-
-
-
-  <TextBox Text="{Binding Text_Slider_Value}" />
-
-    <Slider Value="{Binding SliderValue}" 
-        Orientation="Horizontal"
-        Height="40"
-        TickFrequency="20" 
-        TickPlacement="BottomRight"
-        Minimum="0" 
-        Maximum="200" />
-
-
-    <TextBox Text="{Binding Text_Slider_Value2}" />
-
-    <Slider Value="{Binding SliderValue2}" 
-        Orientation="Horizontal"
-        Height="40"
-        TickFrequency="20" 
-        TickPlacement="BottomRight"
-        Minimum="0" 
-        Maximum="200" />
-
-
-
-    <TextBlock Text="Username"/>
-    <TextBox Text="{Binding UserName}"/>
-
-    <TextBlock Text="{Binding UserNameOutput}"/>
-    
-
-    <Grid ColumnDefinitions="*" RowDefinitions="Auto,*,Auto" Margin="4" >
-
-    <Border Grid.Row="0" Background="Orange" />
-        
-        <TextBlock Text="{Binding Greeting}" Grid.Row="0" Grid.Column="0"   Background="Red" HorizontalAlignment="Center"/>
-
-    <lvc:CartesianChart
-        Series="{Binding Series}" ZoomMode="X"  Grid.Row="1" Grid.Column="0" Height="200" Width="400" >
-    </lvc:CartesianChart>
-
-         <TextBlock Text="{Binding Greeting}" Grid.Row="2" Grid.Column="0"/>
-
-    </Grid>
-
-    <lvc:CartesianChart
-        Series="{Binding Series}" ZoomMode="X"  Height="700" Width="800" >
-    </lvc:CartesianChart>
-
-  
-
-</StackPanel>
-
- </ScrollViewer>
-
+            <lvc:CartesianChart HorizontalAlignment="Stretch"
+                                Height="300"
+                                SyncContext="{Binding Sync}"
+                                Series="{Binding Series_Plot}"
+                                XAxes="{Binding XAxes}" />
+            <Button Command="{Binding DoRandomChangeCommand}">Change Value</Button>
+            <lvc:PieChart Height="300"
+                          Width="300"
+                          Series="{Binding Series_AngularGauge}"
+                          VisualElements="{Binding VisualElements}"
+                          InitialRotation="-225"
+                          MaxAngle="270"
+                          MinValue="0"
+                          MaxValue="100" />
+            <lvc:PieChart Height="500"
+                          Width="500"
+                          Series="{Binding PieSeries}" />
+            <TextBox Text="{Binding Text_Slider_Value}" />
+            <Slider Value="{Binding SliderValue}"
+                    Orientation="Horizontal"
+                    Height="40"
+                    TickFrequency="20"
+                    TickPlacement="BottomRight"
+                    Minimum="0"
+                    Maximum="200" />
+            <TextBox Text="{Binding Text_Slider_Value2}" />
+            <Slider Value="{Binding SliderValue2}"
+                    Orientation="Horizontal"
+                    Height="40"
+                    TickFrequency="20"
+                    TickPlacement="BottomRight"
+                    Minimum="0"
+                    Maximum="200" />
+            <TextBlock Text="Username" />
+            <TextBox Text="{Binding UserName}" />
+            <TextBlock Text="{Binding UserNameOutput}" />
+            <lvc:CartesianChart Series="{Binding Series}"
+                                ZoomMode="X"
+                                Height="400"
+                                Width="800" />
+        </StackPanel>
+    </ScrollViewer>
 </Window>

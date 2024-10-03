@@ -1,20 +1,14 @@
 ﻿
 using LiveChartsCore;
-using LiveChartsCore.Kernel.Sketches;
 using LiveChartsCore.SkiaSharpView;
 using LiveChartsCore.SkiaSharpView.Painting;
 using SkiaSharp;
 using LiveChartsCore.SkiaSharpView.Drawing.Geometries;
 using LiveChartsCore.Drawing;
-using LiveChartsCore.VisualElements;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System.Threading.Tasks;
 using System;
-using System.Collections.Generic;
-using LiveChartsCore.SkiaSharpView.Drawing;
-using LiveChartsCore.SkiaSharpView.VisualElements;
-using LiveChartsCore.Defaults;
 
 
 namespace AvaLiveCharts.ViewModels;
@@ -33,7 +27,7 @@ public partial class MainViewModel : ObservableObject
 
 
     [ObservableProperty]
-    private string greeting = "Welcome to Avalonia!";
+    private string greeting = "  Welcome to Avalonia, LiveCharts and MVVM-CommunityToolkit !  ";
 
 
     [ObservableProperty]
