@@ -32,6 +32,14 @@
  <ScrollViewer>
 <StackPanel>
 
+        <lvc:PieChart
+           
+            Height="200" Width="400"
+            Series="{Binding PieSeries}">
+        </lvc:PieChart>
+
+
+
   <TextBox Text="{Binding Text_Slider_Value}" />
 
     <Slider Value="{Binding SliderValue}" 

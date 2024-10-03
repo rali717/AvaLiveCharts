@@ -58,7 +58,7 @@ public partial class MainViewModel : ObservableObject
     private async Task DoLogin()
     {
         await Task.Delay(TimeSpan.FromSeconds(2));
-        Greeting="Login success!";
+        Greeting = "Login success!";
     }
 
     partial void OnUserNameChanged(string? value)
@@ -79,7 +79,7 @@ public partial class MainViewModel : ObservableObject
 
     partial void OnSliderValueChanged(int oldValue, int newValue)
     {
-        
+
         Text_Slider_Value = newValue.ToString();
     }
 
@@ -96,6 +96,8 @@ public partial class MainViewModel : ObservableObject
     private static readonly SKColor s_blue = new(25, 118, 210);
     private static readonly SKColor s_red = new(229, 57, 53);
     private static readonly SKColor s_yellow = new(198, 167, 0);
+
+
     public ISeries[] Series { get; set; }
             = new ISeries[]
             {
