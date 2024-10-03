@@ -1,1 +1,1 @@
-LiveCharts Test with Avalonia and MVVM.
+Test:  LiveCharts with Avalonia and MVVM.
