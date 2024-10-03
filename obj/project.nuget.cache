@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "5GSJEClDhCY=",
+  "dgSpecHash": "4wtbiP1If9A=",
   "success": true,
   "projectFilePath": "/home/user/Avalonia/AvaLiveCharts/AvaLiveCharts.csproj",
   "expectedPackageFiles": [
@@ -20,7 +20,7 @@
     "/home/user/.nuget/packages/avalonia.themes.simple/11.1.0/avalonia.themes.simple.11.1.0.nupkg.sha512",
     "/home/user/.nuget/packages/avalonia.win32/11.1.0/avalonia.win32.11.1.0.nupkg.sha512",
     "/home/user/.nuget/packages/avalonia.x11/11.1.0/avalonia.x11.11.1.0.nupkg.sha512",
-    "/home/user/.nuget/packages/communitytoolkit.mvvm/8.2.1/communitytoolkit.mvvm.8.2.1.nupkg.sha512",
+    "/home/user/.nuget/packages/communitytoolkit.mvvm/8.3.1/communitytoolkit.mvvm.8.3.1.nupkg.sha512",
     "/home/user/.nuget/packages/harfbuzzsharp/7.3.0.2/harfbuzzsharp.7.3.0.2.nupkg.sha512",
     "/home/user/.nuget/packages/harfbuzzsharp.nativeassets.linux/7.3.0.2/harfbuzzsharp.nativeassets.linux.7.3.0.2.nupkg.sha512",
     "/home/user/.nuget/packages/harfbuzzsharp.nativeassets.macos/7.3.0.2/harfbuzzsharp.nativeassets.macos.7.3.0.2.nupkg.sha512",
