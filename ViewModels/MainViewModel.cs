@@ -12,15 +12,9 @@ using CommunityToolkit.Mvvm.Input;
 using System.Threading.Tasks;
 using System;
 using System.Collections.Generic;
-
-
 using LiveChartsCore.SkiaSharpView.Drawing;
 using LiveChartsCore.SkiaSharpView.VisualElements;
 using LiveChartsCore.Defaults;
-
-
-
-
 
 
 namespace AvaLiveCharts.ViewModels;
@@ -33,6 +27,7 @@ public partial class MainViewModel : ObservableObject
     [ObservableProperty]
     private string? _userName = "UserName";
 
+
     [ObservableProperty]
     private string? _userNameOutput = "XXX";
 
@@ -40,14 +35,13 @@ public partial class MainViewModel : ObservableObject
     [ObservableProperty]
     private string greeting = "Welcome to Avalonia!";
 
+
     [ObservableProperty]
     private int sliderValue = 20;
 
+
     [ObservableProperty]
     private string text_Slider_Value = "XXX";
-
-
-
 
 
     [ObservableProperty]

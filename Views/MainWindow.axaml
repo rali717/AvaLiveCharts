@@ -32,9 +32,24 @@
  <ScrollViewer>
 <StackPanel>
 
+
+        <Button  Command="{Binding DoRandomChangeCommand}">Change Value</Button>
+
+        <lvc:PieChart
+            Height="300" Width="300"
+            Series="{Binding Series_AngularGauge}"
+            VisualElements="{Binding VisualElements}"
+            InitialRotation="-225"
+            MaxAngle="270"
+            MinValue="0"
+            MaxValue="100">
+        </lvc:PieChart>
+
+
+
         <lvc:PieChart
            
-            Height="200" Width="400"
+            Height="500" Width="500"
             Series="{Binding PieSeries}">
         </lvc:PieChart>
 
