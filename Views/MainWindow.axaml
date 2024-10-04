@@ -28,8 +28,7 @@
         <StackPanel>
             <Grid ColumnDefinitions="*"
                   RowDefinitions="Auto"
-                  Margin="50"
-                  >
+                  Margin="50">
                 <Border Grid.Row="0"
                         Background="Red" />
                 <TextBlock Text="{Binding Greeting}"
@@ -42,13 +41,29 @@
                            Margin="20"
                            HorizontalAlignment="Center" />
             </Grid>
-
+            <TextBox HorizontalAlignment="Center"
+                     Text="{Binding Text_Slider_Value2}"
+                     TextAlignment="Center" />
+            <Slider Value="{Binding SliderValue2}"
+                    Orientation="Horizontal"
+                    Height="40"
+                    TickFrequency="20"
+                    TickPlacement="BottomRight"
+                    Minimum="0"
+                    Maximum="200"
+                    Margin="50,0,0,50" />
+            <TextBlock Text="Text-Input:"
+                       HorizontalAlignment="Center" />
+            <TextBox Text="{Binding UserName}"
+                     HorizontalAlignment="Center"
+                     Margin="10,10,0,10" />
+            <TextBlock Text="{Binding UserNameOutput}"
+                       HorizontalAlignment="Center" />
             <lvc:CartesianChart HorizontalAlignment="Stretch"
                                 Height="300"
                                 SyncContext="{Binding Sync}"
                                 Series="{Binding Series_Plot}"
                                 XAxes="{Binding XAxes}" />
-            <Button Command="{Binding DoRandomChangeCommand}">Change Value</Button>
             <lvc:PieChart Height="300"
                           Width="300"
                           Series="{Binding Series_AngularGauge}"
@@ -57,28 +72,23 @@
                           MaxAngle="270"
                           MinValue="0"
                           MaxValue="100" />
-            <lvc:PieChart Height="500"
-                          Width="500"
-                          Series="{Binding PieSeries}" />
-            <TextBox Text="{Binding Text_Slider_Value}" />
+            <TextBox HorizontalAlignment="Center"
+                     TextAlignment="Center"
+                     Text="{Binding Text_Slider_Value}" />
             <Slider Value="{Binding SliderValue}"
                     Orientation="Horizontal"
                     Height="40"
                     TickFrequency="20"
                     TickPlacement="BottomRight"
                     Minimum="0"
-                    Maximum="200" />
-            <TextBox Text="{Binding Text_Slider_Value2}" />
-            <Slider Value="{Binding SliderValue2}"
-                    Orientation="Horizontal"
-                    Height="40"
-                    TickFrequency="20"
-                    TickPlacement="BottomRight"
-                    Minimum="0"
-                    Maximum="200" />
-            <TextBlock Text="Username" />
-            <TextBox Text="{Binding UserName}" />
-            <TextBlock Text="{Binding UserNameOutput}" />
+                    Maximum="100" />
+            <Button HorizontalAlignment="Center"
+                    Command="{Binding DoRandomChangeCommand}">
+                Random Value
+            </Button>
+            <lvc:PieChart Height="500"
+                          Width="500"
+                          Series="{Binding PieSeries}" />
             <lvc:CartesianChart Series="{Binding Series}"
                                 ZoomMode="X"
                                 Height="400"
