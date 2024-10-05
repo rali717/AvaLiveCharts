@@ -27,7 +27,7 @@ public partial class MainViewModel : ObservableObject
 
 
     [ObservableProperty]
-    private string greeting = "  Welcome to Avalonia, LiveCharts and MVVM-CommunityToolkit !  ";
+    private string greeting = "  Welcome to Avalonia, LiveCharts-2 and MVVM-CommunityToolkit !  ";
 
 
     [ObservableProperty]
@@ -69,6 +69,8 @@ public partial class MainViewModel : ObservableObject
     {
 
         Text_Slider_Value = newValue.ToString();
+
+        Needle.Value = newValue;
     }
 
 
@@ -92,7 +94,7 @@ public partial class MainViewModel : ObservableObject
                 new LineSeries<double, RectangleGeometry>
                 {
                     Name = "Temperatur",
-                    Values = new double[] { 2, 1, 3, 5, 3, 4, 6 , 1, 3, 5, 3, 4, 6 , 1, 3, 5, 3, 4, 6 , 1, 3, 5, 3, 4, 6 , 1, 3, 5, 3, 4, 6},
+                    Values = new double[] { 2, 4, 7, 5, 4, 4, 6 , 5, 3, 2, 3, 6, 2 },
                     Fill = new SolidColorPaint(SKColors.LightSeaGreen.WithAlpha(90)),
                     GeometrySize = 10,
                     LineSmoothness = 1,
@@ -103,7 +105,7 @@ public partial class MainViewModel : ObservableObject
                 {
                     Name = "Humity",
                     GeometrySvg = SVGPoints.Star,
-                    Values = new double[] {  2, 2, 1, 3, 5, 3, 4, 3 , 1, 3, 5, 3, 4, 3 , 1, 3, 5, 3, 4, 6 , 1, 3, 5, 3, 4, 6 , 1, 3, 5 },
+                    Values = new double[] { 1, 2, 4, 3, 4, 6, 4, 2 , 1, 4, 5, 3, 1 },
                     Fill = new SolidColorPaint(SKColors.LightGreen.WithAlpha(90)),
                     GeometrySize = 10,
                     LineSmoothness = 1,
@@ -113,7 +115,7 @@ public partial class MainViewModel : ObservableObject
                 new LineSeries<double>
                 {
                     Name = "CO2",
-                    Values = new double[] { 7, 2, 7, 2, 2, 1, 3, 5, 3, 4, 3 , 1, 3, 5, 3, 4, 3 , 1, 3, 5, 3, 4, 6 , 1, 3, 5, 3, 4, 6 , 1, 3, 5 },
+                    Values = new double[] { 0, 1, 1, 2, 2, 1, 3, 3, 6, 5, 1 , 2, 0 },
                     Fill = new SolidColorPaint(SKColors.Yellow.WithAlpha(90)),
                     GeometrySize = 4,
                     LineSmoothness = 0,

@@ -18,5 +18,6 @@ public partial class MainViewModel : ObservableObject
     partial void OnSliderValue2Changed(int oldValue, int newValue)
     {
         Text_Slider_Value2 = newValue.ToString();
+       
     }
 }

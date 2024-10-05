@@ -1,35 +1,18 @@
 
 using LiveChartsCore;
-using LiveChartsCore.Kernel.Sketches;
 using LiveChartsCore.SkiaSharpView;
 using LiveChartsCore.SkiaSharpView.Painting;
 using SkiaSharp;
-using LiveChartsCore.SkiaSharpView.Drawing.Geometries;
-using LiveChartsCore.Drawing;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using System.Threading.Tasks;
 using System;
 
 using System.Collections.Generic;
-
-using LiveChartsCore.SkiaSharpView;
 using LiveChartsCore.SkiaSharpView.Extensions;
 using LiveChartsCore.VisualElements;
 using LiveChartsCore.SkiaSharpView.Drawing;
 using LiveChartsCore.SkiaSharpView.VisualElements;
 using LiveChartsCore.Defaults;
-using System.Collections.Generic;
-using LiveChartsCore;
-using CommunityToolkit.Mvvm.ComponentModel;
-using LiveChartsCore.SkiaSharpView;
-using LiveChartsCore.SkiaSharpView.Extensions;
-using LiveChartsCore.VisualElements;
-using LiveChartsCore.SkiaSharpView.Drawing;
-using LiveChartsCore.SkiaSharpView.VisualElements;
-using LiveChartsCore.Defaults;
-using CommunityToolkit.Mvvm.Input;
-using System;
 
 namespace AvaLiveCharts.ViewModels;
 
@@ -86,6 +69,8 @@ public partial class MainViewModel : ObservableObject
     {
         // modifying the Value property updates and animates the chart automatically
         Needle.Value = _random.Next(0, 100);
+        Text_Slider_Value = Needle.Value.ToString();
+        SliderValue = (int)Needle.Value;
     }
 
     private static void SetStyle(

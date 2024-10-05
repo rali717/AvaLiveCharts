@@ -6,7 +6,6 @@ using System.Collections.Generic;
 using LiveChartsCore.SkiaSharpView.Extensions;
 
 
-
 namespace AvaLiveCharts.ViewModels;
 
 public partial class MainViewModel : ObservableObject

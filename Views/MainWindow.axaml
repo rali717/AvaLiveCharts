@@ -26,32 +26,45 @@
     <!-- <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/> -->
     <ScrollViewer>
         <StackPanel>
-            <Grid ColumnDefinitions="*"
+            <Grid ColumnDefinitions="*,Auto,*"
                   RowDefinitions="Auto"
-                  Margin="50">
+                  Margin="0,50,0,140">
                 <Border Grid.Row="0"
-                        Background="Red" />
-                <TextBlock Text="{Binding Greeting}"
-                           FontFamily="Arial"
-                           FontSize="24"
-                           Grid.Row="0"
-                           Grid.Column="0"
-                           Background="Orange"
-                           Padding="20"
-                           Margin="20"
-                           HorizontalAlignment="Center" />
+                        Grid.Column="1"
+                        Background="Orange"
+                        BorderBrush="Green"
+                        BorderThickness="4"
+                        CornerRadius="10"
+                        Padding="4">
+                    <TextBlock Text="{Binding Greeting}"
+                               Background="Orange"
+                               Foreground="Black"
+                               FontFamily="Arial"
+                               FontWeight="Bold"
+                               FontSize="16"
+                               Grid.Row="0"
+                               Grid.Column="1"
+                               Padding="10"
+                               Margin="5"
+                               HorizontalAlignment="Center"
+                               VerticalAlignment="Center" />
+                </Border>
             </Grid>
             <TextBox HorizontalAlignment="Center"
                      Text="{Binding Text_Slider_Value2}"
                      TextAlignment="Center" />
-            <Slider Value="{Binding SliderValue2}"
-                    Orientation="Horizontal"
-                    Height="40"
-                    TickFrequency="20"
-                    TickPlacement="BottomRight"
-                    Minimum="0"
-                    Maximum="200"
-                    Margin="50,0,0,50" />
+            <Grid HorizontalAlignment="Stretch"
+                  ColumnDefinitions="*,2*,*">
+                <Slider Value="{Binding SliderValue2}"
+                        Grid.Column="1"
+                        Orientation="Horizontal"
+                        Height="40"
+                        TickFrequency="20"
+                        TickPlacement="BottomRight"
+                        Minimum="0"
+                        Maximum="200"
+                        Margin="50,0,0,50" />
+            </Grid>
             <TextBlock Text="Text-Input:"
                        HorizontalAlignment="Center" />
             <TextBox Text="{Binding UserName}"
@@ -75,15 +88,22 @@
             <TextBox HorizontalAlignment="Center"
                      TextAlignment="Center"
                      Text="{Binding Text_Slider_Value}" />
-            <Slider Value="{Binding SliderValue}"
-                    Orientation="Horizontal"
-                    Height="40"
-                    TickFrequency="20"
-                    TickPlacement="BottomRight"
-                    Minimum="0"
-                    Maximum="100" />
+
+            <Grid HorizontalAlignment="Stretch"
+                  ColumnDefinitions="1.5*,2*,1.5*">
+                <Slider Value="{Binding SliderValue}"
+                        Grid.Column="1"
+                        Orientation="Horizontal"
+                        Height="40"
+                        TickFrequency="20"
+                        TickPlacement="BottomRight"
+                        Minimum="0"
+                        Maximum="100" />
+            </Grid>
+
             <Button HorizontalAlignment="Center"
-                    Command="{Binding DoRandomChangeCommand}">
+                    Margin="20"
+                    Command="{Binding DoRandomChangeCommand}">                
                 Random Value
             </Button>
             <lvc:PieChart Height="500"
