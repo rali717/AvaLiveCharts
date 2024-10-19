@@ -6,9 +6,6 @@
         xmlns:local="using:AvaloniaSample"
         xmlns:lvc="using:LiveChartsCore.SkiaSharpView.Avalonia"
         xmlns:oxy="clr-namespace:OxyPlot.Avalonia;assembly=OxyPlot.Avalonia"
-
-
-
         mc:Ignorable="d"
         d:DesignWidth="800"
         d:DesignHeight="450"
@@ -22,11 +19,9 @@
         MaxHeight="800"
         MinWidth="600"
         MaxWidth="1000">
-
     <Window.Styles>
         <StyleInclude Source="/Styles/SliderStyles.axaml" />
     </Window.Styles>
-
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
@@ -59,16 +54,63 @@
                                VerticalAlignment="Center" />
                 </Border>
             </Grid>
+            <Grid ColumnDefinitions="*, 6, *, 6, *"
+                  RowDefinitions="*, 6, *, 6, *"
+                  Height="200"
+                  Margin="50">
+                <Rectangle Grid.Row="0"
+                           Grid.Column="0"
+                           Fill="Blue" />
+                <Rectangle Grid.Row="0"
+                           Grid.Column="2"
+                           Fill="Red" />
+                <Rectangle Grid.Row="0"
+                           Grid.Column="4"
+                           Fill="Brown" />
+                <Rectangle Grid.Row="2"
+                           Grid.Column="0"
+                           Fill="Yellow" />
+                <Rectangle Grid.Row="2"
+                           Grid.Column="2"
+                           Fill="Green" />
+                <Rectangle Grid.Row="2"
+                           Grid.Column="4"
+                           Fill="Red" />
+                <Rectangle Grid.Row="4"
+                           Grid.Column="0"
+                           Fill="Red" />
+                <Rectangle Grid.Row="4"
+                           Grid.Column="2"
+                           Fill="Yellow" />
+                <Rectangle Grid.Row="4"
+                           Grid.Column="4"
+                           Fill="Blue" />
+                <GridSplitter Grid.Column="1"
+                              Grid.RowSpan="5"
+                              Background="Orange"
+                              ResizeDirection="Columns"
+                              VerticalAlignment="Stretch" />
+                <GridSplitter Grid.Column="3"
+                              Grid.RowSpan="5"
+                              Background="Orange"
+                              ResizeDirection="Columns"
+                              VerticalAlignment="Stretch" />
+                <GridSplitter Grid.Row="1"
+                              Grid.ColumnSpan="5"
+                              Background="Orange"
+                              ResizeDirection="Rows"
+                              HorizontalAlignment="Stretch" />
+                <GridSplitter Grid.Row="3"
+                              Grid.ColumnSpan="5"
+                              Background="Orange"
+                              ResizeDirection="Rows"
+                              HorizontalAlignment="Stretch" />
+            </Grid>
             <TextBox HorizontalAlignment="Center"
                      Text="{Binding Text_Slider_Value2}"
                      TextAlignment="Center" />
             <Grid HorizontalAlignment="Stretch"
                   ColumnDefinitions="*,2*,*">
-
-
-
-
-
                 <Slider Value="{Binding SliderValue2}"
                         Grid.Column="1"
                         Orientation="Horizontal"
@@ -91,11 +133,6 @@
                                 SyncContext="{Binding Sync}"
                                 Series="{Binding Series_Plot}"
                                 XAxes="{Binding XAxes}" />
-
-
-
-
-
             <lvc:PieChart Height="300"
                           Width="300"
                           Series="{Binding Series_AngularGauge}"
@@ -107,7 +144,6 @@
             <TextBox HorizontalAlignment="Center"
                      TextAlignment="Center"
                      Text="{Binding Text_Slider_Value}" />
-
             <Grid HorizontalAlignment="Stretch"
                   ColumnDefinitions="1.5*,2*,1.5*">
                 <Slider Value="{Binding SliderValue}"
@@ -119,7 +155,6 @@
                         Minimum="0"
                         Maximum="100" />
             </Grid>
-
             <Button HorizontalAlignment="Center"
                     Margin="20"
                     Command="{Binding DoRandomChangeCommand}">                
@@ -131,8 +166,7 @@
             <lvc:CartesianChart Series="{Binding Series}"
                                 ZoomMode="X"
                                 Height="400"
-                                Width="800"
-                            />
+                                Width="800" />
         </StackPanel>
     </ScrollViewer>
 </Window>
