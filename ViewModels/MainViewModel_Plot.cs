@@ -16,6 +16,7 @@ namespace AvaLiveCharts.ViewModels;
 
 public partial class MainViewModel : ObservableObject
 {
+
     private readonly Random _random2 = new();
     private readonly List<DateTimePoint> _values = new();
     private readonly DateTimeAxis _customAxis;
@@ -27,21 +28,27 @@ public partial class MainViewModel : ObservableObject
             new LineSeries<DateTimePoint>
             {
                 Values = _values,
-                Fill = null,
+                //Fill = null,
                 GeometryFill = null,
+                GeometryStroke = null,
+                GeometrySize = 0,
+                //GeometryStroke = new SolidColorPaint(s_blue, 1),
+                //GeometrySize = 2,
                 //GeometryStroke = null,
-                GeometryStroke = new SolidColorPaint(s_blue, 1),
-                GeometrySize = 2,
-                Stroke = new SolidColorPaint(s_red, 1),
-                LineSmoothness = 0
-
+                
+                //Stroke = new SolidColorPaint(s_red, 1),
+                LineSmoothness = 0,
+                //AnimationsSpeed = null
+                Fill = new SolidColorPaint(new SKColor(63, 77, 99)),
+                Stroke = new SolidColorPaint(new SKColor(120, 152, 203)) { StrokeThickness = 3 },
             }
         };
 
         _customAxis = new DateTimeAxis(TimeSpan.FromSeconds(10), Formatter)
         {
             CustomSeparators = GetSeparators(),
-            AnimationsSpeed = TimeSpan.FromMilliseconds(0),
+            //AnimationsSpeed = TimeSpan.FromMilliseconds(0),
+            AnimationsSpeed = null,
             SeparatorsPaint = new SolidColorPaint(SKColors.Black.WithAlpha(100))
             //SeparatorsPaint = new SolidColorPaint(SKColors.Red.WithAlpha(100))
         };
@@ -49,6 +56,7 @@ public partial class MainViewModel : ObservableObject
         XAxes = new Axis[] { _customAxis };
 
         _ = ReadData();
+
     }
 
     public ObservableCollection<ISeries> Series_Plot { get; set; }

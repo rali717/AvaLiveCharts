@@ -510,6 +510,32 @@
           "lib/net5.0/MicroCom.Runtime.dll": {}
         }
       },
+      "OxyPlot.Avalonia/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Avalonia": "0.10.11",
+          "OxyPlot.Core": "2.1.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/OxyPlot.Avalonia.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/OxyPlot.Avalonia.dll": {}
+        }
+      },
+      "OxyPlot.Core/2.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/OxyPlot.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/OxyPlot.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "SkiaSharp/2.88.8": {
         "type": "package",
         "dependencies": {
@@ -1392,6 +1418,38 @@
         "microcom.runtime.nuspec"
       ]
     },
+    "OxyPlot.Avalonia/2.1.0": {
+      "sha512": "eYIRqGFeIKg2Iv4kdcfxbQvfqmApqBe556WZjlQ0MU3gH+KRVetigYSFFi74yyUEFLI9kbNwAvS41FeTHgZBrQ==",
+      "type": "package",
+      "path": "oxyplot.avalonia/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/OxyPlot.Avalonia.dll",
+        "oxyplot.avalonia.2.1.0.nupkg.sha512",
+        "oxyplot.avalonia.nuspec"
+      ]
+    },
+    "OxyPlot.Core/2.1.0": {
+      "sha512": "jG+Ct3T59fXDG2LE1hyUaXqH7i+h5Nfway1iB0+0NaY2mvDsz8Row/BKjiBWCt5NHp3+q9JSMiD2wpin2hh3kw==",
+      "type": "package",
+      "path": "oxyplot.core/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "OxyPlot_128.png",
+        "lib/net40/OxyPlot.dll",
+        "lib/net40/OxyPlot.xml",
+        "lib/net45/OxyPlot.dll",
+        "lib/net45/OxyPlot.xml",
+        "lib/netstandard1.0/OxyPlot.dll",
+        "lib/netstandard1.0/OxyPlot.xml",
+        "lib/netstandard2.0/OxyPlot.dll",
+        "lib/netstandard2.0/OxyPlot.xml",
+        "oxyplot.core.2.1.0.nupkg.sha512",
+        "oxyplot.core.nuspec"
+      ]
+    },
     "SkiaSharp/2.88.8": {
       "sha512": "bRkp3uKp5ZI8gXYQT57uKwil1uobb2p8c69n7v5evlB/2JNcMAXVcw9DZAP5Ig3WSvgzGm2YSn27UVeOi05NlA==",
       "type": "package",
@@ -1691,7 +1749,8 @@
       "Avalonia.Fonts.Inter >= 11.1.0",
       "Avalonia.Themes.Fluent >= 11.1.0",
       "CommunityToolkit.Mvvm >= 8.3.1",
-      "LiveChartsCore.SkiaSharpView.Avalonia >= 2.0.0-rc2"
+      "LiveChartsCore.SkiaSharpView.Avalonia >= 2.0.0-rc2",
+      "OxyPlot.Avalonia >= 2.1.0"
     ]
   },
   "packageFolders": {
@@ -1763,6 +1822,10 @@
           "LiveChartsCore.SkiaSharpView.Avalonia": {
             "target": "Package",
             "version": "[2.0.0-rc2, )"
+          },
+          "OxyPlot.Avalonia": {
+            "target": "Package",
+            "version": "[2.1.0, )"
           }
         },
         "imports": [

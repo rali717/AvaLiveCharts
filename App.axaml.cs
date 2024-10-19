@@ -5,6 +5,7 @@ using Avalonia.Data.Core.Plugins;
 using Avalonia.Markup.Xaml;
 using AvaLiveCharts.ViewModels;
 using AvaLiveCharts.Views;
+using OxyPlot.Avalonia;
 
 namespace AvaLiveCharts;
 

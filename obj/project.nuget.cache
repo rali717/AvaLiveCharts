@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "4wtbiP1If9A=",
+  "dgSpecHash": "7UhZbBcXIG0=",
   "success": true,
   "projectFilePath": "/home/user/Avalonia/AvaLiveCharts/AvaLiveCharts.csproj",
   "expectedPackageFiles": [
@@ -30,6 +30,8 @@
     "/home/user/.nuget/packages/livechartscore.skiasharpview/2.0.0-rc2/livechartscore.skiasharpview.2.0.0-rc2.nupkg.sha512",
     "/home/user/.nuget/packages/livechartscore.skiasharpview.avalonia/2.0.0-rc2/livechartscore.skiasharpview.avalonia.2.0.0-rc2.nupkg.sha512",
     "/home/user/.nuget/packages/microcom.runtime/0.11.0/microcom.runtime.0.11.0.nupkg.sha512",
+    "/home/user/.nuget/packages/oxyplot.avalonia/2.1.0/oxyplot.avalonia.2.1.0.nupkg.sha512",
+    "/home/user/.nuget/packages/oxyplot.core/2.1.0/oxyplot.core.2.1.0.nupkg.sha512",
     "/home/user/.nuget/packages/skiasharp/2.88.8/skiasharp.2.88.8.nupkg.sha512",
     "/home/user/.nuget/packages/skiasharp.harfbuzz/2.88.6/skiasharp.harfbuzz.2.88.6.nupkg.sha512",
     "/home/user/.nuget/packages/skiasharp.nativeassets.linux/2.88.8/skiasharp.nativeassets.linux.2.88.8.nupkg.sha512",

@@ -16,30 +16,26 @@ namespace AvaLiveCharts.ViewModels;
 public partial class MainViewModel : ObservableObject
 {
 
+
+
     private int _count;
 
-    [ObservableProperty]
-    private string? _userName = "UserName";
+    [ObservableProperty] private string? _userName = "UserName";
 
 
-    [ObservableProperty]
-    private string? _userNameOutput = "XXX";
+    [ObservableProperty] private string? _userNameOutput = "XXX";
 
 
-    [ObservableProperty]
-    private string greeting = "  Welcome to Avalonia, LiveCharts-2 and MVVM-CommunityToolkit !  ";
+    [ObservableProperty] private string greeting = "  Welcome to Avalonia, LiveCharts-2 and MVVM-CommunityToolkit !  ";
 
 
-    [ObservableProperty]
-    private int sliderValue = 20;
+    [ObservableProperty] private int sliderValue = 20;
 
 
-    [ObservableProperty]
-    private string text_Slider_Value = "XXX";
+    [ObservableProperty] private string text_Slider_Value = "XXX";
 
 
-    [ObservableProperty]
-    private int counter;
+    [ObservableProperty] private int counter;
 
 
     [RelayCommand]

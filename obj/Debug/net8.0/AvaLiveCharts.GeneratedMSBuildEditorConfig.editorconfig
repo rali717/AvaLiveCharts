@@ -23,5 +23,8 @@ build_property.EnableGeneratedComInterfaceComImportInterop =
 [/home/user/Avalonia/AvaLiveCharts/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[/home/user/Avalonia/AvaLiveCharts/Styles/SliderStyles.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [/home/user/Avalonia/AvaLiveCharts/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
