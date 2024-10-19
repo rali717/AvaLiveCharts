@@ -74,6 +74,10 @@
             "OxyPlot.Avalonia": {
               "target": "Package",
               "version": "[2.1.0, )"
+            },
+            "RangeSlider.Avalonia": {
+              "target": "Package",
+              "version": "[2.1.0, )"
             }
           },
           "imports": [

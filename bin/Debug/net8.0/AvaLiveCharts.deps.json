@@ -15,7 +15,8 @@
           "Avalonia.Themes.Fluent": "11.1.0",
           "CommunityToolkit.Mvvm": "8.3.1",
           "LiveChartsCore.SkiaSharpView.Avalonia": "2.0.0-rc2",
-          "OxyPlot.Avalonia": "2.1.0"
+          "OxyPlot.Avalonia": "2.1.0",
+          "RangeSlider.Avalonia": "2.1.0"
         },
         "runtime": {
           "AvaLiveCharts.dll": {}
@@ -399,6 +400,17 @@
           }
         }
       },
+      "RangeSlider.Avalonia/2.1.0": {
+        "dependencies": {
+          "Avalonia": "11.1.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/RangeSlider.Avalonia.dll": {
+            "assemblyVersion": "2.1.0.0",
+            "fileVersion": "2.1.0.0"
+          }
+        }
+      },
       "SkiaSharp/2.88.8": {
         "dependencies": {
           "SkiaSharp.NativeAssets.Win32": "2.88.8",
@@ -702,6 +714,13 @@
       "sha512": "sha512-jG+Ct3T59fXDG2LE1hyUaXqH7i+h5Nfway1iB0+0NaY2mvDsz8Row/BKjiBWCt5NHp3+q9JSMiD2wpin2hh3kw==",
       "path": "oxyplot.core/2.1.0",
       "hashPath": "oxyplot.core.2.1.0.nupkg.sha512"
+    },
+    "RangeSlider.Avalonia/2.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Gs4GCQ39+HD6g6AamEYjtOerOUOYMSZG22liH/SEDIWuW4mwvRxYrtqLjEvuKwqw9KT+ShPNNLkU9gboaF9yMg==",
+      "path": "rangeslider.avalonia/2.1.0",
+      "hashPath": "rangeslider.avalonia.2.1.0.nupkg.sha512"
     },
     "SkiaSharp/2.88.8": {
       "type": "package",

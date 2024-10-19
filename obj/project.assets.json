@@ -536,6 +536,18 @@
           }
         }
       },
+      "RangeSlider.Avalonia/2.1.0": {
+        "type": "package",
+        "dependencies": {
+          "Avalonia": "11.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/RangeSlider.Avalonia.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/RangeSlider.Avalonia.dll": {}
+        }
+      },
       "SkiaSharp/2.88.8": {
         "type": "package",
         "dependencies": {
@@ -1450,6 +1462,20 @@
         "oxyplot.core.nuspec"
       ]
     },
+    "RangeSlider.Avalonia/2.1.0": {
+      "sha512": "Gs4GCQ39+HD6g6AamEYjtOerOUOYMSZG22liH/SEDIWuW4mwvRxYrtqLjEvuKwqw9KT+ShPNNLkU9gboaF9yMg==",
+      "type": "package",
+      "path": "rangeslider.avalonia/2.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.md",
+        "README.md",
+        "lib/netstandard2.0/RangeSlider.Avalonia.dll",
+        "rangeslider.avalonia.2.1.0.nupkg.sha512",
+        "rangeslider.avalonia.nuspec"
+      ]
+    },
     "SkiaSharp/2.88.8": {
       "sha512": "bRkp3uKp5ZI8gXYQT57uKwil1uobb2p8c69n7v5evlB/2JNcMAXVcw9DZAP5Ig3WSvgzGm2YSn27UVeOi05NlA==",
       "type": "package",
@@ -1750,7 +1776,8 @@
       "Avalonia.Themes.Fluent >= 11.1.0",
       "CommunityToolkit.Mvvm >= 8.3.1",
       "LiveChartsCore.SkiaSharpView.Avalonia >= 2.0.0-rc2",
-      "OxyPlot.Avalonia >= 2.1.0"
+      "OxyPlot.Avalonia >= 2.1.0",
+      "RangeSlider.Avalonia >= 2.1.0"
     ]
   },
   "packageFolders": {
@@ -1824,6 +1851,10 @@
             "version": "[2.0.0-rc2, )"
           },
           "OxyPlot.Avalonia": {
+            "target": "Package",
+            "version": "[2.1.0, )"
+          },
+          "RangeSlider.Avalonia": {
             "target": "Package",
             "version": "[2.1.0, )"
           }

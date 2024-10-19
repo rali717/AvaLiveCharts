@@ -11,22 +11,28 @@
                 Value="Orange" />
         <Style Selector="^ Track">
             <Style Selector="^ RepeatButton Border">
+
+
                 <Setter Property="CornerRadius"
                         Value="0" />
                 <Setter Property="Height"
                         Value="6" />
             </Style>
             <Style Selector="^ Thumb">
+
+
+
                 <Setter Property="Height"
-                        Value="18" />
+                        Value="40" />
                 <Setter Property="Width"
-                        Value="18" />
+                        Value="15" />
                 <Setter Property="BorderBrush"
                         Value="Crimson" />
                 <Setter Property="BorderThickness"
-                        Value="3" />
+                        Value="2" />
                 <Setter Property="Background"
                         Value="Green" />
+
             </Style>
         </Style>
     </Style>

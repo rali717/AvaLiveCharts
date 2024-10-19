@@ -6,6 +6,7 @@
         xmlns:local="using:AvaloniaSample"
         xmlns:lvc="using:LiveChartsCore.SkiaSharpView.Avalonia"
         xmlns:oxy="clr-namespace:OxyPlot.Avalonia;assembly=OxyPlot.Avalonia"
+        xmlns:rs="using:RangeSlider.Avalonia.Controls"
         mc:Ignorable="d"
         d:DesignWidth="800"
         d:DesignHeight="450"
@@ -54,6 +55,11 @@
                                VerticalAlignment="Center" />
                 </Border>
             </Grid>
+            <rs:RangeSlider Minimum="0"
+                            Maximum="100"
+                            LowerSelectedValue="25"
+                            UpperSelectedValue="75"
+                            IsThumbOverlap="True" />
             <Grid ColumnDefinitions="*, 6, *, 6, *"
                   RowDefinitions="*, 6, *, 6, *"
                   Height="200"
@@ -114,7 +120,7 @@
                 <Slider Value="{Binding SliderValue2}"
                         Grid.Column="1"
                         Orientation="Horizontal"
-                        Height="40"
+                        Height="60"
                         TickFrequency="20"
                         TickPlacement="BottomRight"
                         Minimum="0"
@@ -149,7 +155,7 @@
                 <Slider Value="{Binding SliderValue}"
                         Grid.Column="1"
                         Orientation="Horizontal"
-                        Height="40"
+                        
                         TickFrequency="20"
                         TickPlacement="BottomRight"
                         Minimum="0"

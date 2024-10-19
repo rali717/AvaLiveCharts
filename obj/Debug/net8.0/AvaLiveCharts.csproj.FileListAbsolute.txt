@@ -73,3 +73,4 @@
 /home/user/Avalonia/AvaLiveCharts/obj/Debug/net8.0/AvaLiveCharts.sourcelink.json
 /home/user/Avalonia/AvaLiveCharts/bin/Debug/net8.0/OxyPlot.Avalonia.dll
 /home/user/Avalonia/AvaLiveCharts/bin/Debug/net8.0/OxyPlot.dll
+/home/user/Avalonia/AvaLiveCharts/bin/Debug/net8.0/RangeSlider.Avalonia.dll
