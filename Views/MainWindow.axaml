@@ -134,11 +134,18 @@
                      Margin="10,10,0,10" />
             <TextBlock Text="{Binding UserNameOutput}"
                        HorizontalAlignment="Center" />
+
+
             <lvc:CartesianChart HorizontalAlignment="Stretch"
-                                Height="300"
+                                Height="400"
                                 SyncContext="{Binding Sync}"
                                 Series="{Binding Series_Plot}"
-                                XAxes="{Binding XAxes}" />
+                                XAxes="{Binding XAxes}"
+                                EasingFunction="{x:Null}" 
+      
+                                />
+
+
             <lvc:PieChart Height="300"
                           Width="300"
                           Series="{Binding Series_AngularGauge}"
