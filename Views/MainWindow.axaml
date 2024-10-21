@@ -142,7 +142,7 @@
                                 Series="{Binding Series_Plot}"
                                 XAxes="{Binding XAxes}"
                                 EasingFunction="{x:Null}" 
-      
+                          
                                 />
 
 

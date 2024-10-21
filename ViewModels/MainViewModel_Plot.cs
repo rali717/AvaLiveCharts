@@ -21,6 +21,11 @@ public partial class MainViewModel : ObservableObject
     private readonly List<DateTimePoint> _values = new();
 
     private readonly List<DateTimePoint> _values2 = new();
+
+    private readonly List<DateTimePoint> _values3 = new();
+
+    private readonly List<DateTimePoint> _values4 = new();
+
     private readonly DateTimeAxis _customAxis;
 
     public MainViewModel()
@@ -34,7 +39,7 @@ public partial class MainViewModel : ObservableObject
                 GeometryFill = null,
                 GeometryStroke = null,
                 GeometrySize = 0,
-
+                
                 LineSmoothness = 0,
                 //AnimationsSpeed = null
                 Fill = new SolidColorPaint(new SKColor(63, 77, 99)),
@@ -45,18 +50,29 @@ public partial class MainViewModel : ObservableObject
             new LineSeries<DateTimePoint>
             {
                 Values = _values2,
-
-                //GeometryFill = null,
                 GeometryStroke = null,
                 GeometrySize = 0,
-
                 LineSmoothness = 0,
-                //AnimationsSpeed = null
-                //Fill = new SolidColorPaint(new SKColor(233, 77, 99)),
                 Fill = null,
-                Stroke = new SolidColorPaint(new SKColor(20, 152, 203)) { StrokeThickness = 3 },
-                //AnimationsSpeed = TimeSpan.FromMilliseconds(1000)
-               
+                Stroke = new SolidColorPaint(new SKColor(20, 152, 203)) { StrokeThickness = 3 },              
+            },
+                        new LineSeries<DateTimePoint>
+            {
+                Values = _values3,
+                GeometryStroke = null,
+                GeometrySize = 0,
+                LineSmoothness = 0,
+                Fill = null,
+                Stroke = new SolidColorPaint(new SKColor(250, 52, 23)) { StrokeThickness = 3 },              
+            },
+                                    new LineSeries<DateTimePoint>
+            {
+                Values = _values4,
+                GeometryStroke = null,
+                GeometrySize = 0,
+                LineSmoothness = 0,
+                Fill = null,
+                Stroke = new SolidColorPaint(new SKColor(20, 252, 23)) { StrokeThickness = 3 },              
             }
 
         };
@@ -115,15 +131,19 @@ public partial class MainViewModel : ObservableObject
             {
                 //   _values.Add(new DateTimePoint(DateTime.Now, _random2.Next(0, 10)));
 
-                _values2.Add(new DateTimePoint(DateTime.Now, x));
                 _values.Add(new DateTimePoint(DateTime.Now, (sinus[x])));
+                _values2.Add(new DateTimePoint(DateTime.Now, x));
+                _values3.Add(new DateTimePoint(DateTime.Now, (-sinus[x])-100));
+                _values4.Add(new DateTimePoint(DateTime.Now, -200-x));
+
                 x++;
+                
                 if (x >= (sinus.Length)) { x = 0; }
-
-
 
                 if (_values.Count > 300) _values.RemoveAt(0);
                 if (_values2.Count > 300) _values2.RemoveAt(0);
+                if (_values3.Count > 300) _values3.RemoveAt(0);
+                if (_values4.Count > 300) _values4.RemoveAt(0);
                 // we need to update the separators every time we add a new point 
                 _customAxis.CustomSeparators = GetSeparators();
             }
