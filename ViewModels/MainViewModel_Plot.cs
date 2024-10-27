@@ -14,7 +14,7 @@ using System.Collections.ObjectModel;
 namespace AvaLiveCharts.ViewModels;
 
 
-public partial class MainViewModel : ObservableObject
+public partial class MainViewModel : ViewModelBase
 {
 
     private readonly Random _random2 = new();

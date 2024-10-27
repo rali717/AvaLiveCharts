@@ -7,6 +7,9 @@
         xmlns:lvc="using:LiveChartsCore.SkiaSharpView.Avalonia"
         xmlns:oxy="clr-namespace:OxyPlot.Avalonia;assembly=OxyPlot.Avalonia"
         xmlns:rs="using:RangeSlider.Avalonia.Controls"
+        xmlns:cc="using:AvaLiveCharts.Views"
+        
+
         mc:Ignorable="d"
         d:DesignWidth="800"
         d:DesignHeight="450"
@@ -31,6 +34,10 @@
     <!-- <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/> -->
     <ScrollViewer>
         <StackPanel>
+
+<cc:MyControl>
+</cc:MyControl>
+
             <Grid ColumnDefinitions="*,Auto,*"
                   RowDefinitions="Auto"
                   Margin="0,50,0,140">
@@ -60,6 +67,7 @@
                             LowerSelectedValue="25"
                             UpperSelectedValue="75"
                             IsThumbOverlap="True" />
+
             <Grid ColumnDefinitions="*, 6, *, 6, *"
                   RowDefinitions="*, 6, *, 6, *"
                   Height="200"
@@ -112,6 +120,8 @@
                               ResizeDirection="Rows"
                               HorizontalAlignment="Stretch" />
             </Grid>
+
+            
             <TextBox HorizontalAlignment="Center"
                      Text="{Binding Text_Slider_Value2}"
                      TextAlignment="Center" />
@@ -145,9 +155,10 @@
                           
                                 />
 
-
             <lvc:PieChart Height="300"
                           Width="300"
+                          
+                          
                           Series="{Binding Series_AngularGauge}"
                           VisualElements="{Binding VisualElements}"
                           InitialRotation="-225"

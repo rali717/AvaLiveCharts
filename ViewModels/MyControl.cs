@@ -13,7 +13,8 @@ using System.Collections.ObjectModel;
 
 namespace AvaLiveCharts.ViewModels;
 
-public partial class MainViewModel : ViewModelBase
+
+public partial class MyControl : ViewModelBase
 {
 
 }

@@ -17,7 +17,7 @@ using LiveChartsCore.Defaults;
 namespace AvaLiveCharts.ViewModels;
 
 
-public partial class MainViewModel : ObservableObject
+public partial class MainViewModel : ViewModelBase
 {
     private readonly Random _random = new();
     public static double sectionsOuter = 130;

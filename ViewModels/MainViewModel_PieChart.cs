@@ -8,7 +8,7 @@ using LiveChartsCore.SkiaSharpView.Extensions;
 
 namespace AvaLiveCharts.ViewModels;
 
-public partial class MainViewModel : ObservableObject
+public partial class MainViewModel : ViewModelBase
 
 {
     // public ISeries[] PieSeries { get; set; } =

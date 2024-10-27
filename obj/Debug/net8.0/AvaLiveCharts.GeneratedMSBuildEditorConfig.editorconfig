@@ -28,3 +28,6 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [/home/user/Avalonia/AvaLiveCharts/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[/home/user/Avalonia/AvaLiveCharts/Views/MyControl.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

@@ -13,7 +13,7 @@ using System;
 
 namespace AvaLiveCharts.ViewModels;
 
-public partial class MainViewModel : ObservableObject
+public partial class MainViewModel : ViewModelBase
 {
 
 
