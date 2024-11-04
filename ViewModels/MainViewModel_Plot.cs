@@ -11,6 +11,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 
+using OxyPlot;
+using OxyPlot.Series;
+
 namespace AvaLiveCharts.ViewModels;
 
 
@@ -39,7 +42,7 @@ public partial class MainViewModel : ViewModelBase
                 GeometryFill = null,
                 GeometryStroke = null,
                 GeometrySize = 0,
-                
+
                 LineSmoothness = 0,
                 //AnimationsSpeed = null
                 Fill = new SolidColorPaint(new SKColor(63, 77, 99)),
@@ -54,7 +57,7 @@ public partial class MainViewModel : ViewModelBase
                 GeometrySize = 0,
                 LineSmoothness = 0,
                 Fill = null,
-                Stroke = new SolidColorPaint(new SKColor(20, 152, 203)) { StrokeThickness = 3 },              
+                Stroke = new SolidColorPaint(new SKColor(20, 152, 203)) { StrokeThickness = 3 },
             },
                         new LineSeries<DateTimePoint>
             {
@@ -63,7 +66,7 @@ public partial class MainViewModel : ViewModelBase
                 GeometrySize = 0,
                 LineSmoothness = 0,
                 Fill = null,
-                Stroke = new SolidColorPaint(new SKColor(250, 52, 23)) { StrokeThickness = 3 },              
+                Stroke = new SolidColorPaint(new SKColor(250, 52, 23)) { StrokeThickness = 3 },
             },
                                     new LineSeries<DateTimePoint>
             {
@@ -72,7 +75,7 @@ public partial class MainViewModel : ViewModelBase
                 GeometrySize = 0,
                 LineSmoothness = 0,
                 Fill = null,
-                Stroke = new SolidColorPaint(new SKColor(20, 252, 23)) { StrokeThickness = 3 },              
+                Stroke = new SolidColorPaint(new SKColor(20, 252, 23)) { StrokeThickness = 3 },
             }
 
         };
@@ -90,6 +93,38 @@ public partial class MainViewModel : ViewModelBase
         XAxes = new Axis[] { _customAxis };
 
         _ = ReadData();
+
+
+        // For OxyPlot
+        // Create the plot model
+        var tmp = new PlotModel { Title = "Simple example", Subtitle = "using OxyPlot" };
+
+        // Create two line series (markers are hidden by default)
+        var series1 = new LineSeries { Title = "Series 1", MarkerType = MarkerType.Circle };
+        series1.Points.Add(new DataPoint(0, 0));
+        series1.Points.Add(new DataPoint(10, 18));
+        series1.Points.Add(new DataPoint(20, 12));
+        series1.Points.Add(new DataPoint(30, 8));
+        series1.Points.Add(new DataPoint(40, 15));
+
+        var series2 = new LineSeries { Title = "Series 2", MarkerType = MarkerType.Square };
+        series2.Points.Add(new DataPoint(0, 4));
+        series2.Points.Add(new DataPoint(10, 12));
+        series2.Points.Add(new DataPoint(20, 16));
+        series2.Points.Add(new DataPoint(30, 25));
+        series2.Points.Add(new DataPoint(40, 5));
+
+
+        // Add the series to the plot model
+        tmp.Series.Add(series1);
+        tmp.Series.Add(series2);
+
+        // Axes are created automatically if they are not defined
+
+        // Set the Model property, the INotifyPropertyChanged event will make the WPF Plot control update its content
+        this.Model = tmp;
+        // End for OxyPlot
+
 
     }
 
@@ -133,11 +168,11 @@ public partial class MainViewModel : ViewModelBase
 
                 _values.Add(new DateTimePoint(DateTime.Now, (sinus[x])));
                 _values2.Add(new DateTimePoint(DateTime.Now, x));
-                _values3.Add(new DateTimePoint(DateTime.Now, (-sinus[x])-100));
-                _values4.Add(new DateTimePoint(DateTime.Now, -200-x));
+                _values3.Add(new DateTimePoint(DateTime.Now, (-sinus[x]) - 100));
+                _values4.Add(new DateTimePoint(DateTime.Now, -200 - x));
 
                 x++;
-                
+
                 if (x >= (sinus.Length)) { x = 0; }
 
                 if (_values.Count > 300) _values.RemoveAt(0);
@@ -173,6 +208,9 @@ public partial class MainViewModel : ViewModelBase
             ? "now"
             : $"{secsAgo:N0}s ago";
     }
+
+    // For OxyPlot
+    public PlotModel Model { get; private set; }
 }
 
 

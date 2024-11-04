@@ -6,6 +6,8 @@ public partial class MyControl : UserControl
 {
     public MyControl()
     {
-       InitializeComponent();
+      InitializeComponent();
+      //DataContext="AvaLiveCharts.ViewModels.MyControl";
+      
     }
 }

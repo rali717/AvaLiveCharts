@@ -14,7 +14,7 @@
     <Application.Styles>
         <FluentTheme />
         <themes:RangeSliderTheme />
-       
+        <StyleInclude Source="avares://OxyPlot.Avalonia/Themes/Default.axaml"/>
 
     </Application.Styles>
 </Application>

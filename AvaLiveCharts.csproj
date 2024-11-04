@@ -10,6 +10,10 @@
 
   <ItemGroup>
     <Folder Include="Models\" />
+    <Folder Include="Views\" />
+    <Folder Include="ViewModels\" />
+  
+
     <AvaloniaResource Include="Assets\**" />
   </ItemGroup>
 
@@ -22,7 +26,9 @@
     <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.1.0" />
     <PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.1" />
     <PackageReference Include="LiveChartsCore.SkiaSharpView.Avalonia" Version="2.0.0-rc2" />
-    <PackageReference Include="OxyPlot.Avalonia" Version="2.1.0" />
+
     <PackageReference Include="RangeSlider.Avalonia" Version="2.1.0" />
+    <PackageReference Include="Oxyplot.Avalonia_11_1" Version="2.2.0" />
+    <PackageReference Include="OxyPlot.Avalonia" Version="2.1.0-Avalonia11" />
   </ItemGroup>
 </Project>

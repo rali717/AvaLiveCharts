@@ -16,7 +16,7 @@ namespace AvaLiveCharts.ViewModels;
 public partial class MainViewModel : ViewModelBase
 {
 
-
+    [ObservableProperty] private string? buttonContent = "The Button";
 
     private int _count;
 

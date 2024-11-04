@@ -73,7 +73,11 @@
             },
             "OxyPlot.Avalonia": {
               "target": "Package",
-              "version": "[2.1.0, )"
+              "version": "[2.1.0-Avalonia11, )"
+            },
+            "Oxyplot.Avalonia_11_1": {
+              "target": "Package",
+              "version": "[2.2.0, )"
             },
             "RangeSlider.Avalonia": {
               "target": "Package",

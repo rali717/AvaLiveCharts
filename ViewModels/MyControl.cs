@@ -17,4 +17,31 @@ namespace AvaLiveCharts.ViewModels;
 public partial class MyControl : ViewModelBase
 {
 
+    [ObservableProperty] public string buttonContent = "  Click me !  ";
+
+    partial void OnButtonContentChanged(string value)
+    {
+        ButtonContent = "Clicked!";
+    }
+
+
+
+    private bool CanClick() => ButtonContent == "CLICKED";
+
+
+// partial void  OnButtonClicked (){
+//     ButtonContent = "Clicked!";
+// }
+
+
+    // [RelayCommand]
+    // private void SetTextBoxContent(string name)
+    // {
+    //     TextBoxContent = $"Moin, {name}";
+    // }
+
+[RelayCommand] public void OnButtonClicked(){
+ButtonContent ="Moin";
+}
+
 }

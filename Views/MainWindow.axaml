@@ -1,13 +1,17 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:vm="using:AvaLiveCharts.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="using:AvaloniaSample"
         xmlns:lvc="using:LiveChartsCore.SkiaSharpView.Avalonia"
-        xmlns:oxy="clr-namespace:OxyPlot.Avalonia;assembly=OxyPlot.Avalonia"
+        
         xmlns:rs="using:RangeSlider.Avalonia.Controls"
-        xmlns:cc="using:AvaLiveCharts.Views"
+        xmlns:v="using:AvaLiveCharts.Views"
+        xmlns:vm="using:AvaLiveCharts.ViewModels"
+        xmlns:UC="clr-namespace:AvaLiveCharts.Views"
+
+        xmlns:oxy="clr-namespace:OxyPlot.Avalonia;assembly=OxyPlot.Avalonia"
+  
         
 
         mc:Ignorable="d"
@@ -23,6 +27,7 @@
         MaxHeight="800"
         MinWidth="600"
         MaxWidth="1000">
+              <!-- xmlns:oxy="clr-namespace:OxyPlot.Wpf;assembly=OxyPlot.Wpf"   -->
     <Window.Styles>
         <StyleInclude Source="/Styles/SliderStyles.axaml" />
     </Window.Styles>
@@ -34,10 +39,14 @@
     <!-- <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/> -->
     <ScrollViewer>
         <StackPanel>
+            
 
-<cc:MyControl>
-</cc:MyControl>
 
+            <oxy:PlotView Model="{Binding Model}" Height="180" Width="400"/>
+
+            <Button Content="{Binding ButtonContent}" />
+            <UC:MyControl Height="80"
+                          Width="100" />
             <Grid ColumnDefinitions="*,Auto,*"
                   RowDefinitions="Auto"
                   Margin="0,50,0,140">
@@ -67,7 +76,6 @@
                             LowerSelectedValue="25"
                             UpperSelectedValue="75"
                             IsThumbOverlap="True" />
-
             <Grid ColumnDefinitions="*, 6, *, 6, *"
                   RowDefinitions="*, 6, *, 6, *"
                   Height="200"
@@ -120,8 +128,6 @@
                               ResizeDirection="Rows"
                               HorizontalAlignment="Stretch" />
             </Grid>
-
-            
             <TextBox HorizontalAlignment="Center"
                      Text="{Binding Text_Slider_Value2}"
                      TextAlignment="Center" />
@@ -144,21 +150,14 @@
                      Margin="10,10,0,10" />
             <TextBlock Text="{Binding UserNameOutput}"
                        HorizontalAlignment="Center" />
-
-
             <lvc:CartesianChart HorizontalAlignment="Stretch"
                                 Height="400"
                                 SyncContext="{Binding Sync}"
                                 Series="{Binding Series_Plot}"
                                 XAxes="{Binding XAxes}"
-                                EasingFunction="{x:Null}" 
-                          
-                                />
-
+                                EasingFunction="{x:Null}" />
             <lvc:PieChart Height="300"
                           Width="300"
-                          
-                          
                           Series="{Binding Series_AngularGauge}"
                           VisualElements="{Binding VisualElements}"
                           InitialRotation="-225"
@@ -173,7 +172,6 @@
                 <Slider Value="{Binding SliderValue}"
                         Grid.Column="1"
                         Orientation="Horizontal"
-                        
                         TickFrequency="20"
                         TickPlacement="BottomRight"
                         Minimum="0"
