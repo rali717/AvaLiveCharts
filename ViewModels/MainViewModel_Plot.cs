@@ -16,6 +16,7 @@ using OxyPlot.Series;
 using OxyPlot.Legends;
 using OxyPlot.Axes;
 
+
 namespace AvaLiveCharts.ViewModels;
 
 
@@ -30,6 +31,7 @@ public partial class MainViewModel : ViewModelBase
     private readonly List<DateTimePoint> _values3 = new();
 
     private readonly List<DateTimePoint> _values4 = new();
+
 
     //private readonly DateTimeAxis _customAxis;
     private readonly  LiveChartsCore.SkiaSharpView.DateTimeAxis _customAxis;
@@ -113,10 +115,10 @@ public partial class MainViewModel : ViewModelBase
 
         var tmp = new PlotModel
         {
-            Title = "Simple example",
+            Title = "THE CHART",
             Subtitle = "using OxyPlot",
-            PlotAreaBorderColor = OxyColors.Red,
-            TextColor = OxyColors.Green,
+            PlotAreaBorderColor = OxyColors.Silver,
+            TextColor = OxyColors.Silver,
 
             
         };
@@ -124,7 +126,7 @@ public partial class MainViewModel : ViewModelBase
         // Create two line series (markers are hidden by default)
         var series1 = new LineSeries
             {
-                Title = "Series 1",
+                Title = "CO2 [ppm]",
                 MarkerType = MarkerType.Circle,
                 MarkerSize = 4,
                 MarkerStroke = OxyColors.White,
@@ -140,7 +142,7 @@ public partial class MainViewModel : ViewModelBase
         
         var series2 = new LineSeries
             {
-                Title = "Series 2",
+                Title = "Hum [%]",
                 MarkerType = MarkerType.Square,
                 MarkerSize = 4,
                 MarkerStroke = OxyColors.Red
@@ -174,19 +176,23 @@ tmp.IsLegendVisible=true;
 ///var xAxis = new LinearAxis
 var xAxis = new LinearAxis
 {
+     Title = "Time [s]",
      Position = AxisPosition.Bottom,
-     Title = "X-Axis",
+
      MajorGridlineStyle = LineStyle.Solid,
-     MinorGridlineStyle = LineStyle.Dot
+     MinorGridlineStyle = LineStyle.Dot,
+     MajorGridlineColor = OxyColors.GhostWhite
 };
     tmp.Axes.Add(xAxis);   
 
 var yAxis = new LinearAxis
 {
-     Position = AxisPosition.Left,
      Title = "Y-Axis",
+     Position = AxisPosition.Left,
      MajorGridlineStyle = LineStyle.Solid,
-     MinorGridlineStyle = LineStyle.Dot
+     MinorGridlineStyle = LineStyle.Dot,
+     MajorGridlineColor = OxyColors.GhostWhite,
+     MinorGridlineColor = OxyColors.GhostWhite
 };
     tmp.Axes.Add(yAxis);   
       // Set the Model property, the INotifyPropertyChanged event will make the WPF Plot control update its content
@@ -229,20 +235,13 @@ var yAxis = new LinearAxis
             // this is not necessary if your changes are made in the UI thread. 
             lock (Sync)
             {
-                //   _values.Add(new DateTimePoint(DateTime.Now, _random2.Next(0, 10)));
-
-                // _values.Add(new DateTimePoint(DateTime.Now, (sinus[x])));
-                // _values2.Add(new DateTimePoint(DateTime.Now, x));
-                // _values3.Add(new DateTimePoint(DateTime.Now, (-sinus[x]) - 100));
-                // _values4.Add(new DateTimePoint(DateTime.Now, -200 - x));
-
-                // x++;
-
-
                 _values.Add(new DateTimePoint(DateTime.Now, (sinus[x])));
                 _values2.Add(new DateTimePoint(DateTime.Now, x));
                 _values3.Add(new DateTimePoint(DateTime.Now, (-sinus[x]) - 100));
                 _values4.Add(new DateTimePoint(DateTime.Now, -200 - x));
+
+           
+
 
                 x++;
                 x++;
@@ -250,12 +249,20 @@ var yAxis = new LinearAxis
 
                 if (x >= (sinus.Length)) { x = 0; }
 
+
                 if (_values.Count > 300) _values.RemoveAt(0);
                 if (_values2.Count > 300) _values2.RemoveAt(0);
                 if (_values3.Count > 300) _values3.RemoveAt(0);
                 if (_values4.Count > 300) _values4.RemoveAt(0);
+
                 // we need to update the separators every time we add a new point 
-                _customAxis.CustomSeparators = GetSeparators();
+
+                 _customAxis.CustomSeparators = GetSeparators();
+                 //_customAxis.MinStep = 1;
+                //_customAxis.CustomSeparators = new double[] { 0, 10, 25, 50, 100 };
+            //_customAxis.MinLimit = 0; // forces the axis to start at 0
+            //_customAxis.MaxLimit = 100; // forces the axis to end at 100
+            _customAxis.SeparatorsPaint = new SolidColorPaint(SKColors.Black.WithAlpha(100));
             }
         }
     }

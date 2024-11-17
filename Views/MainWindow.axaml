@@ -22,8 +22,7 @@
         MaxHeight="980"
         MinWidth="600"
         MaxWidth="1400"
-        WindowStartupLocation="CenterOwner"
-        >
+        WindowStartupLocation="CenterOwner">
     <!-- xmlns:oxy="clr-namespace:OxyPlot.Wpf;assembly=OxyPlot.Wpf" -->
     <Window.Styles>
         <StyleInclude Source="/Styles/SliderStyles.axaml" />
@@ -64,14 +63,15 @@
             <oxy:PlotView Model="{Binding Model}"
                           Height="600"
                           Width="800"
-                          Background="#848484"
-                         
-                           />
-                          
-            <Button Content="{Binding ButtonContent}" />
-            <UC:MyControl Height="80"
-                          Width="100" />
+                          Background="#0b161a"
+                          BorderThickness="4"
+                          CornerRadius="8"
+                          BorderBrush="#e3e3e3" />
 
+
+            <!-- <Button Content="{Binding ButtonContent}" /> -->
+            <!-- <UC:MyControl Height="80"
+                          Width="100" /> -->
             <rs:RangeSlider Minimum="0"
                             Maximum="100"
                             LowerSelectedValue="25"
