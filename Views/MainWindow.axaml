@@ -10,18 +10,20 @@
         xmlns:UC="clr-namespace:AvaLiveCharts.Views"
         xmlns:oxy="clr-namespace:OxyPlot.Avalonia;assembly=OxyPlot.Avalonia"
         mc:Ignorable="d"
-        d:DesignWidth="800"
-        d:DesignHeight="450"
+        d:DesignWidth="1350"
+        d:DesignHeight="950"
         x:Class="AvaLiveCharts.Views.MainWindow"
         x:DataType="vm:MainViewModel"
         Icon="/Assets/avalonia-logo.ico"
         Title="AvaLiveCharts"
-        Height="600"
-        Width="900"
+        Height="950"
+        Width="1350"
         MinHeight="400"
-        MaxHeight="800"
+        MaxHeight="980"
         MinWidth="600"
-        MaxWidth="1000">
+        MaxWidth="1400"
+        WindowStartupLocation="CenterOwner"
+        >
     <!-- xmlns:oxy="clr-namespace:OxyPlot.Wpf;assembly=OxyPlot.Wpf" -->
     <Window.Styles>
         <StyleInclude Source="/Styles/SliderStyles.axaml" />

@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("AvaLiveCharts")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4c6e93457c31beb06902bc10848393bb89d74ac1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+22c21265d75af8b31df5a55a74e68efcae42866e")]
 [assembly: System.Reflection.AssemblyProductAttribute("AvaLiveCharts")]
 [assembly: System.Reflection.AssemblyTitleAttribute("AvaLiveCharts")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
