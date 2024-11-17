@@ -1,1 +1,7 @@
-Test:  LiveCharts2 with Avalonia and MVVM.
+Test:  
+
+* Avalonia
+* MVVM Community Toolkit
+* LiveCharts2
+* OxyPlot
+
