@@ -10,10 +10,13 @@ using CommunityToolkit.Mvvm.Input;
 using System.Threading.Tasks;
 using System;
 using System.Collections.ObjectModel;
+using OxyPlot;
+using OxyPlot.Series;
 
 namespace AvaLiveCharts.ViewModels;
 
 public partial class MainViewModel : ViewModelBase
 {
-
+    // For OxyPlot
+    public PlotModel Model { get; private set; }
 }

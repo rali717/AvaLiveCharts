@@ -2,32 +2,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-       
              xmlns:v="using:AvaLiveCharts.Views"
              xmlns:vm="using:AvaLiveCharts.ViewModels"
-
              x:Class="AvaLiveCharts.Views.MyControl"
              x:DataType="vm:MyControl"
-      
-    
-
- 
              mc:Ignorable="d"
              d:DesignWidth="500"
-             d:DesignHeight="450"
-             >
-     
-
+             d:DesignHeight="450">
     <StackPanel Orientation="Vertical"
                 Margin="8,0">
-
-        <Button    Content="{Binding ButtonContent}"
-                 
-                 
-                   Command="{Binding OnButtonClicked}"
-                   Height="30"
-                   Width="70"
-                   HorizontalAlignment="Center"
-                  />
+        <Button Content="{Binding ButtonContent}"
+                Command="{Binding OnButtonClicked}"
+                Height="30"
+                Width="70"
+                HorizontalAlignment="Center" />
     </StackPanel>
 </UserControl>

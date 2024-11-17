@@ -4,16 +4,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="using:AvaloniaSample"
         xmlns:lvc="using:LiveChartsCore.SkiaSharpView.Avalonia"
-        
         xmlns:rs="using:RangeSlider.Avalonia.Controls"
         xmlns:v="using:AvaLiveCharts.Views"
         xmlns:vm="using:AvaLiveCharts.ViewModels"
         xmlns:UC="clr-namespace:AvaLiveCharts.Views"
-
         xmlns:oxy="clr-namespace:OxyPlot.Avalonia;assembly=OxyPlot.Avalonia"
-  
-        
-
         mc:Ignorable="d"
         d:DesignWidth="800"
         d:DesignHeight="450"
@@ -27,7 +22,7 @@
         MaxHeight="800"
         MinWidth="600"
         MaxWidth="1000">
-              <!-- xmlns:oxy="clr-namespace:OxyPlot.Wpf;assembly=OxyPlot.Wpf"   -->
+    <!-- xmlns:oxy="clr-namespace:OxyPlot.Wpf;assembly=OxyPlot.Wpf" -->
     <Window.Styles>
         <StyleInclude Source="/Styles/SliderStyles.axaml" />
     </Window.Styles>
@@ -39,14 +34,6 @@
     <!-- <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/> -->
     <ScrollViewer>
         <StackPanel>
-            
-
-
-            <oxy:PlotView Model="{Binding Model}" Height="180" Width="400"/>
-
-            <Button Content="{Binding ButtonContent}" />
-            <UC:MyControl Height="80"
-                          Width="100" />
             <Grid ColumnDefinitions="*,Auto,*"
                   RowDefinitions="Auto"
                   Margin="0,50,0,140">
@@ -71,6 +58,18 @@
                                VerticalAlignment="Center" />
                 </Border>
             </Grid>
+
+            <oxy:PlotView Model="{Binding Model}"
+                          Height="600"
+                          Width="800"
+                          Background="#848484"
+                         
+                           />
+                          
+            <Button Content="{Binding ButtonContent}" />
+            <UC:MyControl Height="80"
+                          Width="100" />
+
             <rs:RangeSlider Minimum="0"
                             Maximum="100"
                             LowerSelectedValue="25"

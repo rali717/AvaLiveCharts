@@ -13,6 +13,8 @@ using System.Collections.ObjectModel;
 
 using OxyPlot;
 using OxyPlot.Series;
+using OxyPlot.Legends;
+using OxyPlot.Axes;
 
 namespace AvaLiveCharts.ViewModels;
 
@@ -29,7 +31,8 @@ public partial class MainViewModel : ViewModelBase
 
     private readonly List<DateTimePoint> _values4 = new();
 
-    private readonly DateTimeAxis _customAxis;
+    //private readonly DateTimeAxis _customAxis;
+    private readonly  LiveChartsCore.SkiaSharpView.DateTimeAxis _customAxis;
 
     public MainViewModel()
     {
@@ -59,7 +62,7 @@ public partial class MainViewModel : ViewModelBase
                 Fill = null,
                 Stroke = new SolidColorPaint(new SKColor(20, 152, 203)) { StrokeThickness = 3 },
             },
-                        new LineSeries<DateTimePoint>
+            new LineSeries<DateTimePoint>
             {
                 Values = _values3,
                 GeometryStroke = null,
@@ -68,7 +71,8 @@ public partial class MainViewModel : ViewModelBase
                 Fill = null,
                 Stroke = new SolidColorPaint(new SKColor(250, 52, 23)) { StrokeThickness = 3 },
             },
-                                    new LineSeries<DateTimePoint>
+        
+            new LineSeries<DateTimePoint>
             {
                 Values = _values4,
                 GeometryStroke = null,
@@ -80,7 +84,7 @@ public partial class MainViewModel : ViewModelBase
 
         };
 
-        _customAxis = new DateTimeAxis(TimeSpan.FromSeconds(10), Formatter)
+        _customAxis = new LiveChartsCore.SkiaSharpView.DateTimeAxis(TimeSpan.FromSeconds(10), Formatter)
         {
             CustomSeparators = GetSeparators(),
             //AnimationsSpeed = TimeSpan.FromMilliseconds(0),
@@ -90,24 +94,57 @@ public partial class MainViewModel : ViewModelBase
             //AnimationsSpeed = TimeSpan.FromMilliseconds(5000)
         };
 
-        XAxes = new Axis[] { _customAxis };
+        XAxes = new LiveChartsCore.SkiaSharpView.Axis[] { _customAxis };
 
         _ = ReadData();
 
+        //---------------------------------------------------------------------------------------------------------------------
 
-        // For OxyPlot
+        // ===> For OxyPlot <====================================================================================
+
         // Create the plot model
-        var tmp = new PlotModel { Title = "Simple example", Subtitle = "using OxyPlot" };
+
+        // LegendPlacement="Outside"
+        //                   LegendPosition="TopCenter"
+        //                   LegendOrientation="Horizontal"
+        //                   LegendBorderThickness="0"
+        //                   PlotAreaBorderThickness="0"
+
+
+        var tmp = new PlotModel
+        {
+            Title = "Simple example",
+            Subtitle = "using OxyPlot",
+            PlotAreaBorderColor = OxyColors.Red,
+            TextColor = OxyColors.Green,
+
+            
+        };
 
         // Create two line series (markers are hidden by default)
-        var series1 = new LineSeries { Title = "Series 1", MarkerType = MarkerType.Circle };
+        var series1 = new LineSeries
+            {
+                Title = "Series 1",
+                MarkerType = MarkerType.Circle,
+                MarkerSize = 4,
+                MarkerStroke = OxyColors.White,
+
+            };
         series1.Points.Add(new DataPoint(0, 0));
         series1.Points.Add(new DataPoint(10, 18));
         series1.Points.Add(new DataPoint(20, 12));
         series1.Points.Add(new DataPoint(30, 8));
         series1.Points.Add(new DataPoint(40, 15));
 
-        var series2 = new LineSeries { Title = "Series 2", MarkerType = MarkerType.Square };
+        // ---
+        
+        var series2 = new LineSeries
+            {
+                Title = "Series 2",
+                MarkerType = MarkerType.Square,
+                MarkerSize = 4,
+                MarkerStroke = OxyColors.Red
+            };
         series2.Points.Add(new DataPoint(0, 4));
         series2.Points.Add(new DataPoint(10, 12));
         series2.Points.Add(new DataPoint(20, 16));
@@ -119,18 +156,46 @@ public partial class MainViewModel : ViewModelBase
         tmp.Series.Add(series1);
         tmp.Series.Add(series2);
 
-        // Axes are created automatically if they are not defined
-
-        // Set the Model property, the INotifyPropertyChanged event will make the WPF Plot control update its content
-        this.Model = tmp;
+        
+        //tmp.Legends.Add("VO2");       // Axes are created automatically if they are not defined
+  
         // End for OxyPlot
+Legend legend = new Legend();
+legend.LegendTitle = "Legend";
+//legend.LegendPosition = LegendPosition.TopRight;
+legend.LegendPosition = LegendPosition.LeftTop;
+legend.LegendOrientation = LegendOrientation.Vertical;
+legend.LegendPlacement = LegendPlacement.Outside;
+legend.LegendSymbolPlacement = LegendSymbolPlacement.Left;
+tmp.Legends.Add(legend); 
+tmp.IsLegendVisible=true;
 
+///---
+///var xAxis = new LinearAxis
+var xAxis = new LinearAxis
+{
+     Position = AxisPosition.Bottom,
+     Title = "X-Axis",
+     MajorGridlineStyle = LineStyle.Solid,
+     MinorGridlineStyle = LineStyle.Dot
+};
+    tmp.Axes.Add(xAxis);   
 
+var yAxis = new LinearAxis
+{
+     Position = AxisPosition.Left,
+     Title = "Y-Axis",
+     MajorGridlineStyle = LineStyle.Solid,
+     MinorGridlineStyle = LineStyle.Dot
+};
+    tmp.Axes.Add(yAxis);   
+      // Set the Model property, the INotifyPropertyChanged event will make the WPF Plot control update its content
+        this.Model = tmp;
     }
 
     public ObservableCollection<ISeries> Series_Plot { get; set; }
 
-    public Axis[] XAxes { get; set; }
+    public LiveChartsCore.SkiaSharpView.Axis[] XAxes { get; set; }
 
     public object Sync { get; } = new object();
 
@@ -210,7 +275,7 @@ public partial class MainViewModel : ViewModelBase
     }
 
     // For OxyPlot
-    public PlotModel Model { get; private set; }
+  //  public PlotModel Model { get; private set; }
 }
 
 
