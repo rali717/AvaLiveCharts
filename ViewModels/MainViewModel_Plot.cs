@@ -231,11 +231,21 @@ var yAxis = new LinearAxis
             {
                 //   _values.Add(new DateTimePoint(DateTime.Now, _random2.Next(0, 10)));
 
+                // _values.Add(new DateTimePoint(DateTime.Now, (sinus[x])));
+                // _values2.Add(new DateTimePoint(DateTime.Now, x));
+                // _values3.Add(new DateTimePoint(DateTime.Now, (-sinus[x]) - 100));
+                // _values4.Add(new DateTimePoint(DateTime.Now, -200 - x));
+
+                // x++;
+
+
                 _values.Add(new DateTimePoint(DateTime.Now, (sinus[x])));
                 _values2.Add(new DateTimePoint(DateTime.Now, x));
                 _values3.Add(new DateTimePoint(DateTime.Now, (-sinus[x]) - 100));
                 _values4.Add(new DateTimePoint(DateTime.Now, -200 - x));
 
+                x++;
+                x++;
                 x++;
 
                 if (x >= (sinus.Length)) { x = 0; }
