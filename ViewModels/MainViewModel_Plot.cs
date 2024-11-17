@@ -89,7 +89,7 @@ public partial class MainViewModel : ViewModelBase
         _customAxis = new LiveChartsCore.SkiaSharpView.DateTimeAxis(TimeSpan.FromSeconds(10), Formatter)
         {
             CustomSeparators = GetSeparators(),
-            //AnimationsSpeed = TimeSpan.FromMilliseconds(0),
+            AnimationsSpeed = TimeSpan.FromMilliseconds(0),
             //AnimationsSpeed = null,
             SeparatorsPaint = new SolidColorPaint(SKColors.Black.WithAlpha(100)),
             //SeparatorsPaint = new SolidColorPaint(SKColors.Red.WithAlpha(100))
@@ -228,7 +228,7 @@ var yAxis = new LinearAxis
 
         while (IsReading)
         {
-            await Task.Delay(16);
+            await Task.Delay(33);
 
             // Because we are updating the chart from a different thread 
             // we need to use a lock to access the chart data. 
@@ -262,6 +262,7 @@ var yAxis = new LinearAxis
                 //_customAxis.CustomSeparators = new double[] { 0, 10, 25, 50, 100 };
             //_customAxis.MinLimit = 0; // forces the axis to start at 0
             //_customAxis.MaxLimit = 100; // forces the axis to end at 100
+
             _customAxis.SeparatorsPaint = new SolidColorPaint(SKColors.Black.WithAlpha(100));
             }
         }
