@@ -178,21 +178,22 @@ var xAxis = new LinearAxis
 {
      Title = "Time [s]",
      Position = AxisPosition.Bottom,
-
+     AxisTitleDistance = 20,
      MajorGridlineStyle = LineStyle.Solid,
      MinorGridlineStyle = LineStyle.Dot,
-     MajorGridlineColor = OxyColors.GhostWhite
+     MajorGridlineColor = OxyColor.FromRgb(60,60,60)      //      FromUInt32(0x909090) //OxyColors.GhostWhite
 };
     tmp.Axes.Add(xAxis);   
 
 var yAxis = new LinearAxis
 {
      Title = "Y-Axis",
+     AxisTitleDistance = 20,
      Position = AxisPosition.Left,
      MajorGridlineStyle = LineStyle.Solid,
      MinorGridlineStyle = LineStyle.Dot,
-     MajorGridlineColor = OxyColors.GhostWhite,
-     MinorGridlineColor = OxyColors.GhostWhite
+     MajorGridlineColor = OxyColor.FromRgb(60,60,60) ,
+     MinorGridlineColor = OxyColor.FromRgb(60,60,60) 
 };
     tmp.Axes.Add(yAxis);   
       // Set the Model property, the INotifyPropertyChanged event will make the WPF Plot control update its content
