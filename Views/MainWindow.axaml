@@ -128,7 +128,15 @@
                               Background="Orange"
                               ResizeDirection="Rows"
                               HorizontalAlignment="Stretch" />
+                <TextBlock  Grid.Row="2"
+                           Grid.Column="2" 
+                           Text="GridSplitter"
+                           FontSize="16"
+                           
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center" />
             </Grid>
+
             <TextBox HorizontalAlignment="Center"
                      Text="{Binding Text_Slider_Value2}"
                      TextAlignment="Center" />

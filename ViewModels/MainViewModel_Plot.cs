@@ -176,7 +176,7 @@ tmp.IsLegendVisible=true;
 ///var xAxis = new LinearAxis
 var xAxis = new LinearAxis
 {
-     Title = "Time [s]",
+     Title = "Time   [ s ]",
      Position = AxisPosition.Bottom,
      AxisTitleDistance = 20,
      MajorGridlineStyle = LineStyle.Solid,
@@ -187,7 +187,7 @@ var xAxis = new LinearAxis
 
 var yAxis = new LinearAxis
 {
-     Title = "Y-Axis",
+     Title = "Y-Axis   [ V ]",
      AxisTitleDistance = 20,
      Position = AxisPosition.Left,
      MajorGridlineStyle = LineStyle.Solid,
