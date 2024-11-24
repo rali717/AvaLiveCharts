@@ -203,6 +203,7 @@
                         Minimum="0"
                         Maximum="100" />
             </Grid>
+            
             <Button HorizontalAlignment="Center"
                     Margin="20"
                     Command="{Binding DoRandomChangeCommand}">                
