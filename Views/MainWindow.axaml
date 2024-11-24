@@ -26,13 +26,26 @@
     <!-- xmlns:oxy="clr-namespace:OxyPlot.Wpf;assembly=OxyPlot.Wpf" -->
     <Window.Styles>
         <StyleInclude Source="/Styles/SliderStyles.axaml" />
+        <!-- <StyleInclude Source="/Styles/RangeSlider.axaml" /> -->
     </Window.Styles>
+
+
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
         <vm:MainViewModel />
     </Design.DataContext>
-    <!-- <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/> -->
+    <!-- <Window.Resources>
+        <Style x:Key="RangeSlider"
+               TargetType="RangeSlider">
+            <Setter Property="HorizontalAlignment"
+                    Value="Center" />
+            <Setter Property="FontFamily"
+                    Value="Comic Sans MS" />
+            <Setter Property="FontSize"
+                    Value="14" />
+        </Style>
+    </Window.Resources> -->
     <ScrollViewer>
         <StackPanel>
             <Grid ColumnDefinitions="*,Auto,*"
@@ -59,7 +72,6 @@
                                VerticalAlignment="Center" />
                 </Border>
             </Grid>
-
             <oxy:PlotView Model="{Binding Model}"
                           Height="600"
                           Width="800"
@@ -67,16 +79,22 @@
                           BorderThickness="4"
                           CornerRadius="8"
                           BorderBrush="#404040" />
-
-
             <!-- <Button Content="{Binding ButtonContent}" /> -->
             <!-- <UC:MyControl Height="80"
                           Width="100" /> -->
-            <rs:RangeSlider Minimum="0"
+            <rs:RangeSlider Orientation="Horizontal"
+                            Minimum="0"
                             Maximum="100"
-                            LowerSelectedValue="25"
-                            UpperSelectedValue="75"
-                            IsThumbOverlap="True" />
+                            MoveWholeRange="True"
+                            LowerSelectedValue="40"
+                            UpperSelectedValue="60"
+                            IsThumbOverlap="True"
+                            TickFrequency="5"
+                            IsSnapToTickEnabled="True"
+                            TickPlacement="BottomRight">
+
+            </rs:RangeSlider>
+
             <Grid ColumnDefinitions="*, 6, *, 6, *"
                   RowDefinitions="*, 6, *, 6, *"
                   Height="200"
@@ -128,15 +146,13 @@
                               Background="Orange"
                               ResizeDirection="Rows"
                               HorizontalAlignment="Stretch" />
-                <TextBlock  Grid.Row="2"
-                           Grid.Column="2" 
+                <TextBlock Grid.Row="2"
+                           Grid.Column="2"
                            Text="GridSplitter"
                            FontSize="16"
-                           
                            HorizontalAlignment="Center"
                            VerticalAlignment="Center" />
             </Grid>
-
             <TextBox HorizontalAlignment="Center"
                      Text="{Binding Text_Slider_Value2}"
                      TextAlignment="Center" />
