@@ -180,6 +180,7 @@
                                 SyncContext="{Binding Sync}"
                                 Series="{Binding Series_Plot}"
                                 XAxes="{Binding XAxes}"
+                       
                                 EasingFunction="{x:Null}" />
             <lvc:PieChart Height="300"
                           Width="300"

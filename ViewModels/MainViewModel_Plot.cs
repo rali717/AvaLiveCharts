@@ -36,6 +36,7 @@ public partial class MainViewModel : ViewModelBase
     //private readonly DateTimeAxis _customAxis;
     private readonly  LiveChartsCore.SkiaSharpView.DateTimeAxis _customAxis;
 
+
     public MainViewModel()
     {
         Series_Plot = new ObservableCollection<ISeries>
@@ -91,12 +92,15 @@ public partial class MainViewModel : ViewModelBase
             CustomSeparators = GetSeparators(),
             AnimationsSpeed = TimeSpan.FromMilliseconds(0),
             //AnimationsSpeed = null,
-            SeparatorsPaint = new SolidColorPaint(SKColors.Black.WithAlpha(100)),
+            SeparatorsPaint = new SolidColorPaint(SKColors.Silver.WithAlpha(100)),
             //SeparatorsPaint = new SolidColorPaint(SKColors.Red.WithAlpha(100))
             //AnimationsSpeed = TimeSpan.FromMilliseconds(5000)
         };
 
         XAxes = new LiveChartsCore.SkiaSharpView.Axis[] { _customAxis };
+
+
+
 
         _ = ReadData();
 
@@ -264,7 +268,7 @@ var yAxis = new LinearAxis
             //_customAxis.MinLimit = 0; // forces the axis to start at 0
             //_customAxis.MaxLimit = 100; // forces the axis to end at 100
 
-            _customAxis.SeparatorsPaint = new SolidColorPaint(SKColors.Black.WithAlpha(100));
+            _customAxis.SeparatorsPaint = new SolidColorPaint(SKColors.Silver.WithAlpha(100));
             }
         }
     }
