@@ -120,7 +120,7 @@ public partial class MainViewModel : ViewModelBase
         var tmp = new PlotModel
         {
             Title = "THE CHART",
-            Subtitle = "using  OxyPlot",
+            Subtitle = "using OxyPlot",
             PlotAreaBorderColor = OxyColors.Silver,
             TextColor = OxyColors.Silver,
 
