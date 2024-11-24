@@ -4,8 +4,10 @@
 ### DotnetCore ###
 # .NET Core build folders
 bin/
-obj/
 bin/*
+bin/debug/
+obj/
+obj/debug/
 obj/*
 
 # Common node modules locations
