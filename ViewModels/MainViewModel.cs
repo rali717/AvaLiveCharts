@@ -26,7 +26,7 @@ public partial class MainViewModel : ViewModelBase
     [ObservableProperty] private string? _userNameOutput = "XXX";
 
 
-    [ObservableProperty] private string greeting = "Welcome to Avalonia, with \n* MVVM-CommunityToolkit\n* LiveCharts-2\n and \n* OxyPlot   ";
+    [ObservableProperty] private string greeting = "Welcome to Avalonia, with  \n* MVVM-CommunityToolkit\n* LiveCharts-2\n and \n* OxyPlot   ";
 
 
     [ObservableProperty] private int sliderValue = 20;

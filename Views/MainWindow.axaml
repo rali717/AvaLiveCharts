@@ -22,7 +22,8 @@
         MaxHeight="980"
         MinWidth="600"
         MaxWidth="1400"
-        WindowStartupLocation="CenterOwner">
+        WindowStartupLocation="CenterOwner"
+        Background="#131313">
     <!-- xmlns:oxy="clr-namespace:OxyPlot.Wpf;assembly=OxyPlot.Wpf" -->
     <Window.Styles>
         <StyleInclude Source="/Styles/SliderStyles.axaml" />
@@ -89,7 +90,7 @@
                             LowerSelectedValue="40"
                             UpperSelectedValue="60"
                             IsThumbOverlap="True"
-                            TickFrequency="5"
+                            TickFrequency="1"
                             IsSnapToTickEnabled="True"
                             TickPlacement="BottomRight">
 
@@ -180,7 +181,7 @@
                                 SyncContext="{Binding Sync}"
                                 Series="{Binding Series_Plot}"
                                 XAxes="{Binding XAxes}"
-                       
+                                DrawMarginFrame="{Binding Frame}"
                                 EasingFunction="{x:Null}" />
             <lvc:PieChart Height="300"
                           Width="300"

@@ -34,7 +34,7 @@ public partial class MainViewModel : ViewModelBase
 
 
     //private readonly DateTimeAxis _customAxis;
-    private readonly  LiveChartsCore.SkiaSharpView.DateTimeAxis _customAxis;
+    private readonly LiveChartsCore.SkiaSharpView.DateTimeAxis _customAxis;
 
 
     public MainViewModel()
@@ -51,8 +51,9 @@ public partial class MainViewModel : ViewModelBase
 
                 LineSmoothness = 0,
                 //AnimationsSpeed = null
-                Fill = new SolidColorPaint(new SKColor(63, 77, 99)),
-                Stroke = new SolidColorPaint(new SKColor(120, 152, 203)) { StrokeThickness = 3 },
+                Fill = new SolidColorPaint(new SKColor(19, 250, 20, 80)),
+                Stroke = new SolidColorPaint(new SKColor(20, 252, 23)) { StrokeThickness = 3 },
+                
                 //AnimationsSpeed = TimeSpan.FromMilliseconds(1000)
                
             },
@@ -62,8 +63,9 @@ public partial class MainViewModel : ViewModelBase
                 GeometryStroke = null,
                 GeometrySize = 0,
                 LineSmoothness = 0,
-                Fill = null,
-                Stroke = new SolidColorPaint(new SKColor(20, 152, 203)) { StrokeThickness = 3 },
+                    
+                Stroke = new SolidColorPaint(new SKColor(250, 52, 23)) { StrokeThickness = 3 },
+                Fill = new SolidColorPaint(new SKColor(240, 45, 20, 80)),
             },
             new LineSeries<DateTimePoint>
             {
@@ -72,9 +74,9 @@ public partial class MainViewModel : ViewModelBase
                 GeometrySize = 0,
                 LineSmoothness = 0,
                 Fill = null,
-                Stroke = new SolidColorPaint(new SKColor(250, 52, 23)) { StrokeThickness = 3 },
+                Stroke = new SolidColorPaint(new SKColor(20, 152, 203)) { StrokeThickness = 3 },
             },
-        
+
             new LineSeries<DateTimePoint>
             {
                 Values = _values4,
@@ -82,7 +84,7 @@ public partial class MainViewModel : ViewModelBase
                 GeometrySize = 0,
                 LineSmoothness = 0,
                 Fill = null,
-                Stroke = new SolidColorPaint(new SKColor(20, 252, 23)) { StrokeThickness = 3 },
+                Stroke = new SolidColorPaint(new SKColor(120, 152, 203)) { StrokeThickness = 3 },
             }
 
         };
@@ -124,18 +126,18 @@ public partial class MainViewModel : ViewModelBase
             PlotAreaBorderColor = OxyColors.Silver,
             TextColor = OxyColors.Silver,
 
-            
+
         };
 
         // Create two line series (markers are hidden by default)
         var series1 = new LineSeries
-            {
-                Title = "CO2 [ppm]",
-                MarkerType = MarkerType.Circle,
-                MarkerSize = 4,
-                MarkerStroke = OxyColors.White,
+        {
+            Title = "CO2 [ppm]",
+            MarkerType = MarkerType.Circle,
+            MarkerSize = 4,
+            MarkerStroke = OxyColors.White,
 
-            };
+        };
         series1.Points.Add(new DataPoint(0, 0));
         series1.Points.Add(new DataPoint(10, 18));
         series1.Points.Add(new DataPoint(20, 12));
@@ -143,14 +145,14 @@ public partial class MainViewModel : ViewModelBase
         series1.Points.Add(new DataPoint(40, 15));
 
         // ---
-        
+
         var series2 = new LineSeries
-            {
-                Title = "Hum [%]",
-                MarkerType = MarkerType.Square,
-                MarkerSize = 4,
-                MarkerStroke = OxyColors.Red
-            };
+        {
+            Title = "Hum [%]",
+            MarkerType = MarkerType.Square,
+            MarkerSize = 4,
+            MarkerStroke = OxyColors.Red
+        };
         series2.Points.Add(new DataPoint(0, 4));
         series2.Points.Add(new DataPoint(10, 12));
         series2.Points.Add(new DataPoint(20, 16));
@@ -162,45 +164,45 @@ public partial class MainViewModel : ViewModelBase
         tmp.Series.Add(series1);
         tmp.Series.Add(series2);
 
-        
+
         //tmp.Legends.Add("VO2");       // Axes are created automatically if they are not defined
-  
+
         // End for OxyPlot
-Legend legend = new Legend();
-legend.LegendTitle = "Legend";
-//legend.LegendPosition = LegendPosition.TopRight;
-legend.LegendPosition = LegendPosition.LeftTop;
-legend.LegendOrientation = LegendOrientation.Vertical;
-legend.LegendPlacement = LegendPlacement.Outside;
-legend.LegendSymbolPlacement = LegendSymbolPlacement.Left;
-tmp.Legends.Add(legend); 
-tmp.IsLegendVisible=true;
+        Legend legend = new Legend();
+        legend.LegendTitle = "Legend";
+        //legend.LegendPosition = LegendPosition.TopRight;
+        legend.LegendPosition = LegendPosition.LeftTop;
+        legend.LegendOrientation = LegendOrientation.Vertical;
+        legend.LegendPlacement = LegendPlacement.Outside;
+        legend.LegendSymbolPlacement = LegendSymbolPlacement.Left;
+        tmp.Legends.Add(legend);
+        tmp.IsLegendVisible = true;
 
-///---
-///var xAxis = new LinearAxis
-var xAxis = new LinearAxis
-{
-     Title = "Time   [ s ]",
-     Position = AxisPosition.Bottom,
-     AxisTitleDistance = 20,
-     MajorGridlineStyle = LineStyle.Solid,
-     MinorGridlineStyle = LineStyle.Dot,
-     MajorGridlineColor = OxyColor.FromRgb(60,60,60)      //      FromUInt32(0x909090) //OxyColors.GhostWhite
-};
-    tmp.Axes.Add(xAxis);   
+        ///---
+        ///var xAxis = new LinearAxis
+        var xAxis = new LinearAxis
+        {
+            Title = "Time   [ s ]",
+            Position = AxisPosition.Bottom,
+            AxisTitleDistance = 20,
+            MajorGridlineStyle = LineStyle.Solid,
+            MinorGridlineStyle = LineStyle.Dot,
+            MajorGridlineColor = OxyColor.FromRgb(60, 60, 60)      //      FromUInt32(0x909090) //OxyColors.GhostWhite
+        };
+        tmp.Axes.Add(xAxis);
 
-var yAxis = new LinearAxis
-{
-     Title = "Y-Axis   [ V ]",
-     AxisTitleDistance = 20,
-     Position = AxisPosition.Left,
-     MajorGridlineStyle = LineStyle.Solid,
-     MinorGridlineStyle = LineStyle.Dot,
-     MajorGridlineColor = OxyColor.FromRgb(60,60,60) ,
-     MinorGridlineColor = OxyColor.FromRgb(60,60,60) 
-};
-    tmp.Axes.Add(yAxis);   
-      // Set the Model property, the INotifyPropertyChanged event will make the WPF Plot control update its content
+        var yAxis = new LinearAxis
+        {
+            Title = "Y-Axis   [ V ]",
+            AxisTitleDistance = 20,
+            Position = AxisPosition.Left,
+            MajorGridlineStyle = LineStyle.Solid,
+            MinorGridlineStyle = LineStyle.Dot,
+            MajorGridlineColor = OxyColor.FromRgb(60, 60, 60),
+            MinorGridlineColor = OxyColor.FromRgb(60, 60, 60)
+        };
+        tmp.Axes.Add(yAxis);
+        // Set the Model property, the INotifyPropertyChanged event will make the WPF Plot control update its content
         this.Model = tmp;
     }
 
@@ -245,7 +247,7 @@ var yAxis = new LinearAxis
                 _values3.Add(new DateTimePoint(DateTime.Now, (-sinus[x]) - 100));
                 _values4.Add(new DateTimePoint(DateTime.Now, -200 - x));
 
-           
+
 
 
                 x++;
@@ -262,13 +264,13 @@ var yAxis = new LinearAxis
 
                 // we need to update the separators every time we add a new point 
 
-                 _customAxis.CustomSeparators = GetSeparators();
-                 //_customAxis.MinStep = 1;
+                _customAxis.CustomSeparators = GetSeparators();
+                //_customAxis.MinStep = 1;
                 //_customAxis.CustomSeparators = new double[] { 0, 10, 25, 50, 100 };
-            //_customAxis.MinLimit = 0; // forces the axis to start at 0
-            //_customAxis.MaxLimit = 100; // forces the axis to end at 100
+                //_customAxis.MinLimit = 0; // forces the axis to start at 0
+                //_customAxis.MaxLimit = 100; // forces the axis to end at 100
 
-            _customAxis.SeparatorsPaint = new SolidColorPaint(SKColors.Silver.WithAlpha(100));
+                _customAxis.SeparatorsPaint = new SolidColorPaint(SKColors.Silver.WithAlpha(100));
             }
         }
     }
@@ -297,8 +299,20 @@ var yAxis = new LinearAxis
             : $"{secsAgo:N0}s ago";
     }
 
+        public DrawMarginFrame Frame { get; set; } =
+        new()
+        {
+            Fill = new SolidColorPaint(new SKColor(0x0b, 0x16, 0x1a, 0xff)),
+            //Fill = new SolidColorPaint(new SKColor(4294634455u)),
+            Stroke = new SolidColorPaint
+            {
+                Color = SKColors.Gray,
+                StrokeThickness = 2
+            }
+        };
+
     // For OxyPlot
-  //  public PlotModel Model { get; private set; }
+    //  public PlotModel Model { get; private set; }
 }
 
 
