@@ -12,6 +12,7 @@ bin/Debug/net8.0/
 
 obj/
 obj/Debug/
+obj/Debug/*
 obj/*
 obj/Debug/net8.0/*
 obj/Debug/net8.0/
