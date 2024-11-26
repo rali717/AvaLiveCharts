@@ -3,6 +3,7 @@ using LiveChartsCore;
 using LiveChartsCore.SkiaSharpView;
 using LiveChartsCore.SkiaSharpView.Painting;
 using LiveChartsCore.Defaults;
+using LiveChartsCore.Kernel.Sketches;
 using SkiaSharp;
 using CommunityToolkit.Mvvm.ComponentModel;
 using System;
@@ -15,6 +16,8 @@ using OxyPlot;
 using OxyPlot.Series;
 using OxyPlot.Legends;
 using OxyPlot.Axes;
+using LiveChartsCore.Drawing;
+using LiveChartsCore.SkiaSharpView.Painting.Effects;
 
 
 namespace AvaLiveCharts.ViewModels;
@@ -63,9 +66,15 @@ public partial class MainViewModel : ViewModelBase
                 GeometryStroke = null,
                 GeometrySize = 0,
                 LineSmoothness = 0,
-                    
+
                 Stroke = new SolidColorPaint(new SKColor(250, 52, 23)) { StrokeThickness = 3 },
-                Fill = new SolidColorPaint(new SKColor(240, 45, 20, 80)),
+  //              Fill = new SolidColorPaint(new SKColor(240, 45, 20, 80)),
+
+                Fill = new LinearGradientPaint([new SKColor(245, 45, 15), new SKColor(20, 10, 4,0)],
+                new SKPoint(0.5f, 0),
+                new SKPoint(0.5f, 1))
+                //new SKPoint(0.5f, 1))
+
             },
             new LineSeries<DateTimePoint>
             {
@@ -73,8 +82,16 @@ public partial class MainViewModel : ViewModelBase
                 GeometryStroke = null,
                 GeometrySize = 0,
                 LineSmoothness = 0,
-                Fill = null,
-                Stroke = new SolidColorPaint(new SKColor(20, 152, 203)) { StrokeThickness = 3 },
+                //Fill = null,
+                Fill = new LinearGradientPaint([new SKColor(245, 45, 15), new SKColor(20, 10, 4,0)],
+                new SKPoint(0.5f, 0),
+                new SKPoint(0.5f, 1)),
+
+                //Stroke = new SolidColorPaint(new SKColor(20, 152, 203)) { StrokeThickness = 3 },
+                Stroke = new LinearGradientPaint([new SKColor(45, 64, 89), new SKColor(255, 212, 96)])
+            {
+                StrokeThickness = 10
+            }
             },
 
             new LineSeries<DateTimePoint>
@@ -89,6 +106,7 @@ public partial class MainViewModel : ViewModelBase
 
         };
 
+
         _customAxis = new LiveChartsCore.SkiaSharpView.DateTimeAxis(TimeSpan.FromSeconds(10), Formatter)
         {
             CustomSeparators = GetSeparators(),
@@ -101,14 +119,19 @@ public partial class MainViewModel : ViewModelBase
 
         XAxes = new LiveChartsCore.SkiaSharpView.Axis[] { _customAxis };
 
-
-
-
         _ = ReadData();
+
+
+
+
+
 
         //---------------------------------------------------------------------------------------------------------------------
 
         // ===> For OxyPlot <====================================================================================
+
+        //---------------------------------------------------------------------------------------------------------------------
+
 
         // Create the plot model
 
@@ -270,7 +293,7 @@ public partial class MainViewModel : ViewModelBase
                 //_customAxis.MinLimit = 0; // forces the axis to start at 0
                 //_customAxis.MaxLimit = 100; // forces the axis to end at 100
 
-                _customAxis.SeparatorsPaint = new SolidColorPaint(SKColors.Silver.WithAlpha(100));
+                _customAxis.SeparatorsPaint = new SolidColorPaint(SKColors.Silver.WithAlpha(80));
             }
         }
     }
@@ -299,11 +322,26 @@ public partial class MainViewModel : ViewModelBase
             : $"{secsAgo:N0}s ago";
     }
 
-        public DrawMarginFrame Frame { get; set; } =
+    public DrawMarginFrame Frame { get; set; } =
+    new()
+    {
+        Fill = new SolidColorPaint(new SKColor(0x0b, 0x16, 0x1a, 0xff)),
+        //Fill = new SolidColorPaint(new SKColor(4294634455u)),
+        Stroke = new SolidColorPaint
+        {
+            Color = SKColors.Gray,
+            StrokeThickness = 2
+        }
+    };
+
+
+//--- lc2 ---
+
+        public DrawMarginFrame lc2_Frame2 { get; set; } =
         new()
         {
             Fill = new SolidColorPaint(new SKColor(0x0b, 0x16, 0x1a, 0xff)),
-            //Fill = new SolidColorPaint(new SKColor(4294634455u)),
+      
             Stroke = new SolidColorPaint
             {
                 Color = SKColors.Gray,
@@ -311,8 +349,47 @@ public partial class MainViewModel : ViewModelBase
             }
         };
 
-    // For OxyPlot
-    //  public PlotModel Model { get; private set; }
+
+public ICartesianAxis[] lc2_XAxes { get; set; } = [
+        new LiveChartsCore.SkiaSharpView.Axis
+        {
+            Name = "X axis",
+            NamePaint = new SolidColorPaint(SKColors.Gray),
+            TextSize = 18,
+            Padding = new Padding(5, 15, 5, 5),
+            LabelsPaint = new SolidColorPaint(SKColors.Silver),
+            SeparatorsPaint = new SolidColorPaint
+            {
+                Color = SKColors.Silver.WithAlpha(70), // Line full number
+                StrokeThickness = 0.7f,
+                
+            },
+            SubseparatorsPaint = new SolidColorPaint
+            {
+                Color = SKColors.Silver.WithAlpha(60),
+                StrokeThickness = 0.5f,
+                PathEffect = new DashEffect([4, 6])
+            },
+            SubseparatorsCount = 1,
+            ZeroPaint = new SolidColorPaint
+            {
+                Color = SKColors.Silver,
+                StrokeThickness = 2
+            },
+            TicksPaint = new SolidColorPaint
+            {
+                Color = SKColors.Silver,
+                StrokeThickness = 1.5f
+            },
+            SubticksPaint = new SolidColorPaint
+            {
+                Color = SKColors.DarkOrange,
+                StrokeThickness = 1
+            }
+        }
+    ];
+
+
 }
 
 

@@ -214,6 +214,8 @@
                           Width="500"
                           Series="{Binding PieSeries}" />
             <lvc:CartesianChart Series="{Binding Series}"
+                                DrawMarginFrame="{Binding lc2_Frame2}"
+                                XAxes="{Binding lc2_XAxes}"
                                 ZoomMode="X"
                                 Height="400"
                                 Width="800" />

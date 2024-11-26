@@ -91,7 +91,12 @@ public partial class MainViewModel : ViewModelBase
                 {
                     Name = "Temperatur",
                     Values = new double[] { 2, 4, 7, 5, 4, 4, 6 , 5, 3, 2, 3, 6, 2 },
-                    Fill = new SolidColorPaint(SKColors.LightSeaGreen.WithAlpha(90)),
+
+                    // Fill = new SolidColorPaint(SKColors.LightSeaGreen.WithAlpha(90)),
+                    Fill = new LinearGradientPaint([new SKColor(45, 45, 215), new SKColor(20, 10, 4,0)],
+                    new SKPoint(0.5f, 0),
+                    new SKPoint(0.5f, 1)),
+
                     GeometrySize = 5,
                     LineSmoothness = 1,
                     Stroke = new SolidColorPaint(s_red, 2),
@@ -102,7 +107,11 @@ public partial class MainViewModel : ViewModelBase
                     Name = "Humity",
                     GeometrySvg = SVGPoints.Star,
                     Values = new double[] { 1, 2, 4, 3, 4, 6, 4, 2 , 1, 4, 5, 3, 1 },
-                    Fill = new SolidColorPaint(SKColors.LightGreen.WithAlpha(90)),
+                    //Fill = new SolidColorPaint(SKColors.LightGreen.WithAlpha(90)),
+                    Fill = new LinearGradientPaint([new SKColor(45, 245, 15), new SKColor(20, 10, 4,0)],
+                    new SKPoint(0.5f, 0),
+                    new SKPoint(0.5f, 1)),
+
                     GeometrySize = 8,
                     LineSmoothness = 1,
                     Stroke = new SolidColorPaint(s_blue, 2),
@@ -112,7 +121,12 @@ public partial class MainViewModel : ViewModelBase
                 {
                     Name = "CO2",
                     Values = new double[] { 0, 1, 1, 2, 2, 1, 3, 3, 6, 5, 1 , 2, 0 },
-                    Fill = new SolidColorPaint(SKColors.Yellow.WithAlpha(90)),
+                    
+                    //Fill = new SolidColorPaint(SKColors.Yellow.WithAlpha(90)),
+                    Fill = new LinearGradientPaint([new SKColor(245, 45, 15), new SKColor(20, 10, 4,0)],
+                    new SKPoint(0.5f, 0),
+                    new SKPoint(0.5f, 1)),
+                    
                     GeometrySize = 5,
                     LineSmoothness = 0,
                     Stroke = new SolidColorPaint(s_blue, 2),
