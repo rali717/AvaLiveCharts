@@ -183,7 +183,10 @@
                                 XAxes="{Binding XAxes}"
                                 YAxes="{Binding YAxes}"
                                 DrawMarginFrame="{Binding Frame}"
-                                EasingFunction="{x:Null}" />
+                                EasingFunction="{x:Null}" 
+                                LegendPosition="Top"
+                                LegendTextPaint="{Binding LegendTextPaint}"
+                                LegendTextSize="16"/>
 
             <lvc:PieChart Height="300"
                           Width="300"

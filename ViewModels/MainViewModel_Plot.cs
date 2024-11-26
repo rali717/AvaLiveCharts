@@ -46,7 +46,8 @@ public partial class MainViewModel : ViewModelBase
         Series_Plot = new ObservableCollection<ISeries>
         {
             new LineSeries<DateTimePoint>
-            {
+            {   
+                Name = "Graph 1",
                 Values = _values,
 
                 GeometryFill = null,
@@ -55,14 +56,19 @@ public partial class MainViewModel : ViewModelBase
 
                 LineSmoothness = 0,
                 //AnimationsSpeed = null
-                Fill = new SolidColorPaint(new SKColor(19, 250, 20, 80)),
+                
+                Fill = new LinearGradientPaint([new SKColor(19, 250, 20, 70), new SKColor(20, 10, 4,0)],
+                    new SKPoint(0.5f, 0),
+                    new SKPoint(0.5f, 1)),
+                    
                 Stroke = new SolidColorPaint(new SKColor(20, 252, 23)) { StrokeThickness = 3 },
                 
                 //AnimationsSpeed = TimeSpan.FromMilliseconds(1000)
                
             },
             new LineSeries<DateTimePoint>
-            {
+            {   
+                Name = "Graph 2",
                 Values = _values2,
                 GeometryStroke = null,
                 GeometrySize = 0,
@@ -71,20 +77,21 @@ public partial class MainViewModel : ViewModelBase
                 Stroke = new SolidColorPaint(new SKColor(250, 52, 23)) { StrokeThickness = 3 },
   //              Fill = new SolidColorPaint(new SKColor(240, 45, 20, 80)),
 
-                Fill = new LinearGradientPaint([new SKColor(245, 45, 15), new SKColor(20, 10, 4,0)],
+                Fill = new LinearGradientPaint([new SKColor(245, 45, 15,70), new SKColor(20, 10, 4,0)],
                 new SKPoint(0.5f, 0),
                 new SKPoint(0.5f, 1))
                 //new SKPoint(0.5f, 1))
 
             },
             new LineSeries<DateTimePoint>
-            {
+            {   
+                Name = "Graph 3",
                 Values = _values3,
                 GeometryStroke = null,
                 GeometrySize = 0,
                 LineSmoothness = 0,
                 //Fill = null,
-                Fill = new LinearGradientPaint([new SKColor(245, 45, 15), new SKColor(20, 10, 4,0)],
+                Fill = new LinearGradientPaint([new SKColor(245, 45, 15, 80), new SKColor(20, 10, 4,0)],
                 new SKPoint(0.5f, 0),
                 new SKPoint(0.5f, 1)),
 
@@ -96,7 +103,8 @@ public partial class MainViewModel : ViewModelBase
             },
 
             new LineSeries<DateTimePoint>
-            {
+            {   
+                Name = "Graph 4",
                 Values = _values4,
                 GeometryStroke = null,
                 GeometrySize = 0,
@@ -191,7 +199,9 @@ public partial class MainViewModel : ViewModelBase
 
         //tmp.Legends.Add("VO2");       // Axes are created automatically if they are not defined
 
-        // End for OxyPlot
+        // End for OxyPlo
+
+
         Legend legend = new Legend();
         legend.LegendTitle = "Legend";
         //legend.LegendPosition = LegendPosition.TopRight;
@@ -279,6 +289,13 @@ public partial class MainViewModel : ViewModelBase
 
                 }
                 };
+
+    public SolidColorPaint LegendTextPaint { get; set; } = 
+        new SolidColorPaint 
+        { 
+            Color = new SKColor(200, 200, 200), 
+            SKTypeface = SKTypeface.FromFamilyName("Courier New") 
+        }; 
 
     public object Sync { get; } = new object();
 
