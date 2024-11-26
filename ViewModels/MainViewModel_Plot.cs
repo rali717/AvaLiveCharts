@@ -18,6 +18,7 @@ using OxyPlot.Legends;
 using OxyPlot.Axes;
 using LiveChartsCore.Drawing;
 using LiveChartsCore.SkiaSharpView.Painting.Effects;
+using Axis = LiveChartsCore.SkiaSharpView.Axis;
 
 
 namespace AvaLiveCharts.ViewModels;
@@ -233,6 +234,52 @@ public partial class MainViewModel : ViewModelBase
 
     public LiveChartsCore.SkiaSharpView.Axis[] XAxes { get; set; }
 
+    public Axis[] YAxes { get; set; }
+                = new Axis[]
+                {
+                new Axis
+                {
+                    Name = "Y Axis",
+                    NamePaint = new SolidColorPaint(SKColors.Silver),
+
+                    LabelsPaint = new SolidColorPaint(SKColors.Silver),
+                    TextSize = 18,
+                    Padding = new Padding(5, 5, 15, 5), // w,x, Abstand zur Achse, Z
+
+                    ZeroPaint = new SolidColorPaint
+                    {
+                        Color = SKColors.Silver.WithAlpha(70),
+                        StrokeThickness = 1.5f
+                    },
+
+                    SeparatorsPaint = new SolidColorPaint
+                    {
+                    Color = SKColors.Silver.WithAlpha(70), // Line full number
+                    StrokeThickness = 0.7f,
+                    },
+
+                    SubseparatorsPaint = new SolidColorPaint
+                    {
+                        Color = SKColors.Silver.WithAlpha(60),
+                        StrokeThickness = 0.5f,
+                        PathEffect = new DashEffect([4, 6])
+                    },
+                    SubseparatorsCount = 1,
+
+                    TicksPaint = new SolidColorPaint
+                    {
+                        Color = SKColors.Silver,
+                        StrokeThickness = 1.5f
+                    },
+                    SubticksPaint = new SolidColorPaint
+                    {
+                        Color = SKColors.Silver,
+                        StrokeThickness = 1
+                    }
+
+                }
+                };
+
     public object Sync { get; } = new object();
 
     public bool IsReading { get; set; } = true;
@@ -326,7 +373,6 @@ public partial class MainViewModel : ViewModelBase
     new()
     {
         Fill = new SolidColorPaint(new SKColor(0x0b, 0x16, 0x1a, 0xff)),
-        //Fill = new SolidColorPaint(new SKColor(4294634455u)),
         Stroke = new SolidColorPaint
         {
             Color = SKColors.Gray,
@@ -335,34 +381,41 @@ public partial class MainViewModel : ViewModelBase
     };
 
 
-//--- lc2 ---
+    //--- lc2 ---
 
-        public DrawMarginFrame lc2_Frame2 { get; set; } =
-        new()
+    public DrawMarginFrame lc2_Frame2 { get; set; } =
+    new()
+    {
+        Fill = new SolidColorPaint(new SKColor(0x0b, 0x16, 0x1a, 0xff)),
+
+        Stroke = new SolidColorPaint
         {
-            Fill = new SolidColorPaint(new SKColor(0x0b, 0x16, 0x1a, 0xff)),
-      
-            Stroke = new SolidColorPaint
-            {
-                Color = SKColors.Gray,
-                StrokeThickness = 2
-            }
-        };
+            Color = SKColors.Gray,
+            StrokeThickness = 2
+        }
+    };
 
 
-public ICartesianAxis[] lc2_XAxes { get; set; } = [
-        new LiveChartsCore.SkiaSharpView.Axis
+    public ICartesianAxis[] lc2_XAxes { get; set; } = [
+            new LiveChartsCore.SkiaSharpView.Axis
         {
             Name = "X axis",
-            NamePaint = new SolidColorPaint(SKColors.Gray),
+            NamePaint = new SolidColorPaint(SKColors.Silver),
             TextSize = 18,
             Padding = new Padding(5, 15, 5, 5),
             LabelsPaint = new SolidColorPaint(SKColors.Silver),
+
+            ZeroPaint = new SolidColorPaint
+            {
+                Color = SKColors.Silver.WithAlpha(70),
+                StrokeThickness = 1.5f
+            },
+
             SeparatorsPaint = new SolidColorPaint
             {
                 Color = SKColors.Silver.WithAlpha(70), // Line full number
                 StrokeThickness = 0.7f,
-                
+
             },
             SubseparatorsPaint = new SolidColorPaint
             {
@@ -371,11 +424,7 @@ public ICartesianAxis[] lc2_XAxes { get; set; } = [
                 PathEffect = new DashEffect([4, 6])
             },
             SubseparatorsCount = 1,
-            ZeroPaint = new SolidColorPaint
-            {
-                Color = SKColors.Silver,
-                StrokeThickness = 2
-            },
+
             TicksPaint = new SolidColorPaint
             {
                 Color = SKColors.Silver,
@@ -383,11 +432,58 @@ public ICartesianAxis[] lc2_XAxes { get; set; } = [
             },
             SubticksPaint = new SolidColorPaint
             {
-                Color = SKColors.DarkOrange,
+                Color = SKColors.Silver,
                 StrokeThickness = 1
             }
         }
-    ];
+        ];
+
+
+    public Axis[] lc2_YAxes { get; set; }
+                = new Axis[]
+                {
+                new Axis
+                {
+                    Name = "Y Axis",
+                    NamePaint = new SolidColorPaint(SKColors.Silver),
+
+                    LabelsPaint = new SolidColorPaint(SKColors.Silver),
+                    TextSize = 18,
+                    Padding = new Padding(5, 5, 15, 5), // w,x, Abstand zur Achse, Z
+
+                    ZeroPaint = new SolidColorPaint
+                    {
+                        Color = SKColors.Silver.WithAlpha(70),
+                        StrokeThickness = 1.5f
+                    },
+
+                    SeparatorsPaint = new SolidColorPaint
+                    {
+                    Color = SKColors.Silver.WithAlpha(70), // Line full number
+                    StrokeThickness = 0.7f,
+                    },
+
+                    SubseparatorsPaint = new SolidColorPaint
+                    {
+                        Color = SKColors.Silver.WithAlpha(60),
+                        StrokeThickness = 0.5f,
+                        PathEffect = new DashEffect([4, 6])
+                    },
+                    SubseparatorsCount = 1,
+
+                    TicksPaint = new SolidColorPaint
+                    {
+                        Color = SKColors.Silver,
+                        StrokeThickness = 1.5f
+                    },
+                    SubticksPaint = new SolidColorPaint
+                    {
+                        Color = SKColors.Silver,
+                        StrokeThickness = 1
+                    }
+
+                }
+                };
 
 
 }

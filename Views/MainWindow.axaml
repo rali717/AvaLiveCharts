@@ -181,8 +181,10 @@
                                 SyncContext="{Binding Sync}"
                                 Series="{Binding Series_Plot}"
                                 XAxes="{Binding XAxes}"
+                                YAxes="{Binding YAxes}"
                                 DrawMarginFrame="{Binding Frame}"
                                 EasingFunction="{x:Null}" />
+
             <lvc:PieChart Height="300"
                           Width="300"
                           Series="{Binding Series_AngularGauge}"
@@ -216,6 +218,7 @@
             <lvc:CartesianChart Series="{Binding Series}"
                                 DrawMarginFrame="{Binding lc2_Frame2}"
                                 XAxes="{Binding lc2_XAxes}"
+                                YAxes="{Binding lc2_YAxes}"
                                 ZoomMode="X"
                                 Height="400"
                                 Width="800" />
