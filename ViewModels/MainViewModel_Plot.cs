@@ -485,6 +485,13 @@ public partial class MainViewModel : ViewModelBase
                 }
                 };
 
+        public SolidColorPaint lc2_LegendTextPaint { get; set; } = 
+            new SolidColorPaint 
+            { 
+                Color = new SKColor(200, 200, 200), 
+                SKTypeface = SKTypeface.FromFamilyName("Courier New") 
+            }; 
+
 
 }
 

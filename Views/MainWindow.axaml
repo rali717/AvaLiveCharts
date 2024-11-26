@@ -221,7 +221,11 @@
                                 YAxes="{Binding lc2_YAxes}"
                                 ZoomMode="X"
                                 Height="400"
-                                Width="800" />
+                                Width="800" 
+                                LegendPosition="Top"
+                                LegendTextPaint="{Binding lc2_LegendTextPaint}"
+                                LegendTextSize="16"/>
+    
         </StackPanel>
     </ScrollViewer>
 </Window>
