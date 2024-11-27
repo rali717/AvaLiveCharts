@@ -29,8 +29,6 @@
         <StyleInclude Source="/Styles/SliderStyles.axaml" />
         <!-- <StyleInclude Source="/Styles/RangeSlider.axaml" /> -->
     </Window.Styles>
-
-
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
              to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
@@ -74,6 +72,7 @@
                 </Border>
             </Grid>
             <oxy:PlotView Model="{Binding Model}"
+                          Margin="50"
                           Height="600"
                           Width="800"
                           Background="#0b161a"
@@ -84,6 +83,7 @@
             <!-- <UC:MyControl Height="80"
                           Width="100" /> -->
             <rs:RangeSlider Orientation="Horizontal"
+                            Margin="50"
                             Minimum="0"
                             Maximum="100"
                             MoveWholeRange="True"
@@ -92,10 +92,7 @@
                             IsThumbOverlap="True"
                             TickFrequency="1"
                             IsSnapToTickEnabled="True"
-                            TickPlacement="BottomRight">
-
-            </rs:RangeSlider>
-
+                            TickPlacement="BottomRight" />
             <Grid ColumnDefinitions="*, 6, *, 6, *"
                   RowDefinitions="*, 6, *, 6, *"
                   Height="200"
@@ -176,17 +173,30 @@
                      Margin="10,10,0,10" />
             <TextBlock Text="{Binding UserNameOutput}"
                        HorizontalAlignment="Center" />
-            <lvc:CartesianChart HorizontalAlignment="Stretch"
+            <lvc:CartesianChart Series="{Binding Series}"
+                                Margin="50"
+                                DrawMarginFrame="{Binding lc2_Frame2}"
+                                XAxes="{Binding lc2_XAxes}"
+                                YAxes="{Binding lc2_YAxes}"
+                                ZoomMode="X"
+                                Height="400"
+                                Width="800"
+                                LegendPosition="Top"
+                                LegendTextPaint="{Binding lc2_LegendTextPaint}"
+                                LegendTextSize="16" />
+
+            <lvc:CartesianChart Margin="50"
+                                HorizontalAlignment="Stretch"
                                 Height="400"
                                 SyncContext="{Binding Sync}"
                                 Series="{Binding Series_Plot}"
                                 XAxes="{Binding XAxes}"
                                 YAxes="{Binding YAxes}"
                                 DrawMarginFrame="{Binding Frame}"
-                                EasingFunction="{x:Null}" 
+                                EasingFunction="{x:Null}"
                                 LegendPosition="Top"
                                 LegendTextPaint="{Binding LegendTextPaint}"
-                                LegendTextSize="16"/>
+                                LegendTextSize="16" />
 
             <lvc:PieChart Height="300"
                           Width="300"
@@ -209,7 +219,6 @@
                         Minimum="0"
                         Maximum="100" />
             </Grid>
-            
             <Button HorizontalAlignment="Center"
                     Margin="20"
                     Command="{Binding DoRandomChangeCommand}">                
@@ -218,17 +227,6 @@
             <lvc:PieChart Height="500"
                           Width="500"
                           Series="{Binding PieSeries}" />
-            <lvc:CartesianChart Series="{Binding Series}"
-                                DrawMarginFrame="{Binding lc2_Frame2}"
-                                XAxes="{Binding lc2_XAxes}"
-                                YAxes="{Binding lc2_YAxes}"
-                                ZoomMode="X"
-                                Height="400"
-                                Width="800" 
-                                LegendPosition="Top"
-                                LegendTextPaint="{Binding lc2_LegendTextPaint}"
-                                LegendTextSize="16"/>
-    
         </StackPanel>
     </ScrollViewer>
 </Window>
