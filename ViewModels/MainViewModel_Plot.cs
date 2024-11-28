@@ -46,7 +46,7 @@ public partial class MainViewModel : ViewModelBase
         Series_Plot = new ObservableCollection<ISeries>
         {
             new LineSeries<DateTimePoint>
-            {   
+            {
                 Name = "Graph 1",
                 Values = _values,
 
@@ -60,14 +60,14 @@ public partial class MainViewModel : ViewModelBase
                 Fill = new LinearGradientPaint([new SKColor(19, 250, 20, 70), new SKColor(20, 10, 4,0)],
                     new SKPoint(0.5f, 0),
                     new SKPoint(0.5f, 1)),
-                    
+
                 Stroke = new SolidColorPaint(new SKColor(20, 252, 23)) { StrokeThickness = 3 },
                 
                 //AnimationsSpeed = TimeSpan.FromMilliseconds(1000)
                
             },
             new LineSeries<DateTimePoint>
-            {   
+            {
                 Name = "Graph 2",
                 Values = _values2,
                 GeometryStroke = null,
@@ -84,7 +84,7 @@ public partial class MainViewModel : ViewModelBase
 
             },
             new LineSeries<DateTimePoint>
-            {   
+            {
                 Name = "Graph 3",
                 Values = _values3,
                 GeometryStroke = null,
@@ -103,7 +103,7 @@ public partial class MainViewModel : ViewModelBase
             },
 
             new LineSeries<DateTimePoint>
-            {   
+            {
                 Name = "Graph 4",
                 Values = _values4,
                 GeometryStroke = null,
@@ -144,21 +144,13 @@ public partial class MainViewModel : ViewModelBase
 
         // Create the plot model
 
-        // LegendPlacement="Outside"
-        //                   LegendPosition="TopCenter"
-        //                   LegendOrientation="Horizontal"
-        //                   LegendBorderThickness="0"
-        //                   PlotAreaBorderThickness="0"
-
-
+     
         var tmp = new PlotModel
         {
             Title = "THE CHART",
             Subtitle = "using OxyPlot",
             PlotAreaBorderColor = OxyColors.Silver,
             TextColor = OxyColors.Silver,
-
-
         };
 
         // Create two line series (markers are hidden by default)
@@ -242,7 +234,7 @@ public partial class MainViewModel : ViewModelBase
 
 
 
-  
+
 
     public Axis[] YAxes { get; set; }
                 = new Axis[]

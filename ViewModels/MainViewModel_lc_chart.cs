@@ -111,6 +111,7 @@ public partial class MainViewModel : ViewModelBase
             Color = SKColors.Gray,
             StrokeThickness = 2
         }
+        
     };
 
 
