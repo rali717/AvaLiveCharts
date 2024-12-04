@@ -17,6 +17,8 @@ using OxyPlot.Axes;
 
 namespace AvaLiveCharts.ViewModels;
 
+
+// --- OxyPlot ---
 public partial class MainViewModel : ViewModelBase
 {
     public PlotModel OxyPlotModel { get; private set; } = new PlotModel
@@ -31,7 +33,6 @@ public partial class MainViewModel : ViewModelBase
 
 
 
-    // Create two line series (markers are hidden by default)
     public LineSeries series1 = new LineSeries
     {
         Title = "CO2 [ppm]",
@@ -66,8 +67,6 @@ public partial class MainViewModel : ViewModelBase
         MajorGridlineStyle = LineStyle.Solid,
         MinorGridlineStyle = LineStyle.Dot,
         MajorGridlineColor = OxyColor.FromRgb(60, 60, 60)
-
-        // FromUInt32(0x909090) //OxyColors.GhostWhite
         // IsZoomEnabled = true,
         // Zoom(0, 100); // Set initial zoom range   
 
@@ -86,7 +85,7 @@ public partial class MainViewModel : ViewModelBase
     };
 
 
-public Legend legend = new Legend();
+    public Legend legend = new Legend();
 
     public void init_oxyplot()
     {
@@ -114,10 +113,9 @@ public Legend legend = new Legend();
         series2.Points.Add(new DataPoint(40, 5));
 
 
-    //    Legend legend = new Legend();
         legend.LegendTitle = "Legend";
-        legend.TextColor=OxyColors.Silver;
- 
+        legend.TextColor = OxyColors.Silver;
+
         legend.LegendPosition = LegendPosition.LeftTop;
         legend.LegendOrientation = LegendOrientation.Vertical;
         legend.LegendPlacement = LegendPlacement.Outside;
