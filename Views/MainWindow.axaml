@@ -71,7 +71,7 @@
                                VerticalAlignment="Center" />
                 </Border>
             </Grid>
-            <oxy:PlotView Model="{Binding Model}"
+            <oxy:PlotView Model="{Binding OxyPlotModel}"
                           Margin="50"
                           Height="600"
                           Width="800"
