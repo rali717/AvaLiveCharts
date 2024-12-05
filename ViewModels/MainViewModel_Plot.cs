@@ -37,7 +37,7 @@ public partial class MainViewModel : ViewModelBase
     private readonly List<DateTimePoint> _values4 = new();
 
 
-    //private readonly DateTimeAxis _customAxis;
+    //private readonly DateTimeAxis _customAxis ;
     private readonly LiveChartsCore.SkiaSharpView.DateTimeAxis _customAxis;
 
 

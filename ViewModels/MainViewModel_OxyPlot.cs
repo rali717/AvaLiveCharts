@@ -22,7 +22,7 @@ namespace AvaLiveCharts.ViewModels;
 
 public partial class MainViewModel : ViewModelBase
 {
-    public PlotModel OxyPlotModel { get; private set; }
+    public PlotModel OxyPlotModel { get; private set; } = new PlotModel { Title = "Simple example", Subtitle = "using OxyPlot" };
 
     public LineSeries series1 = new LineSeries
     {
