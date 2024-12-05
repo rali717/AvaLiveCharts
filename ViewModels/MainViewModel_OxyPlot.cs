@@ -18,20 +18,11 @@ using OxyPlot.Axes;
 namespace AvaLiveCharts.ViewModels;
 
 
-// --- OxyPlot ---
+// ---  OxyPlot  --------------------------------------------------------------
+
 public partial class MainViewModel : ViewModelBase
 {
-    public PlotModel OxyPlotModel { get; private set; } = new PlotModel
-    {
-        Title = "THE CHART",
-        TitleFontSize = 18,
-        TitleColor = OxyColor.Parse("#FFFF0000"),
-        Subtitle = "using OxyPlot",
-        PlotAreaBorderColor = OxyColors.Silver,
-        TextColor = OxyColors.Silver
-    };
-
-
+    public PlotModel OxyPlotModel { get; private set; }
 
     public LineSeries series1 = new LineSeries
     {
@@ -95,8 +86,10 @@ public partial class MainViewModel : ViewModelBase
         tmpPlotModel.TitleFontSize = 18;
         tmpPlotModel.TitleColor = OxyColor.Parse("#FFFF0000");
         tmpPlotModel.Subtitle = "using OxyPlot";
-        tmpPlotModel.PlotAreaBorderColor = OxyColors.Silver;
         tmpPlotModel.TextColor = OxyColors.Silver;
+
+        tmpPlotModel.PlotAreaBorderThickness=new OxyThickness(0,0,0,0); // Left,Top,Right,Bottom
+        tmpPlotModel.PlotAreaBorderColor = OxyColor.FromRgb(0x0b, 0x16, 0x1a);
 
         series1.Points.Add(new DataPoint(0, 0));
         series1.Points.Add(new DataPoint(10, 18));
